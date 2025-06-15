@@ -37,7 +37,7 @@
       text-decoration: underline;
     }
     .hero {
-      background: url('https://i.imgur.com/https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Ftandem-solar-panel-cells-efficiency-energy%2F&psig=AOvVaw24CyjPK-FJWc9UlgXkX-CV&ust=1750064138321000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIj0noyH840DFQAAAAAdAAAAABAE.jpg') center/cover no-repeat;
+      background: url('your-image-name-or-link.jpg') center/cover no-repeat;
       height: 300px;
       display: flex;
       align-items: center;
@@ -52,6 +52,32 @@
       margin: auto;
       padding: 20px;
     }
+    form table {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    form td {
+      padding: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #002d5f;
+    }
     footer {
       background: #004080;
       color: white;
@@ -63,8 +89,8 @@
 </head>
 <body>
   <header>
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Ftandem-solar-panel-cells-efficiency-energy%2F&psig=AOvVaw24CyjPK-FJWc9UlgXkX-CV&ust=1750064138321000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIj0noyH840DFQAAAAAdAAAAABAE" alt="RayNexuss Logo" style="max-width: 120px;">
-    <h1>Rahul</h1>
+    <img src="GettyImages-1681913304.png" alt="RayNexuss Logo">
+    <h1>RayNexuss Solar Solutions</h1>
     <p>"Go Green, Shine Forever."</p>
   </header>
 
@@ -84,8 +110,37 @@
     <p>We are your trusted solar operation and maintenance partner in Surat, Gujarat. Our expert services ensure maximum efficiency and savings from your solar system.</p>
   </div>
 
+  <div class="content">
+    <h2>Send Your Inquiry</h2>
+    <form>
+      <table>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" id="name" name="name" required></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+          <td><label for="phone">Phone:</label></td>
+          <td><input type="tel" id="phone" name="phone" required></td>
+        </tr>
+        <tr>
+          <td><label for="message">Message:</label></td>
+          <td><textarea id="message" name="message" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:center;">
+            <button type="submit">Submit Inquiry</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
   <footer>
-    &copy; 2025 RayNexuss Solar Solutions | Powered by Clean Energy
+    &copy; 2025 RayNexuss Solar Solutions | Powered by Clean Energy 🌞
   </footer>
 </body>
 </html>
