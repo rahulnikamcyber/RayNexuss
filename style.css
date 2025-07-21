@@ -1,68 +1,34 @@
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f8f8f8;
   color: #333;
 }
+
+/* Header */
 .site-header {
   background: #002244;
   padding: 20px;
   color: white;
   text-align: center;
 }
+
 nav a {
   margin: 0 10px;
   color: white;
   text-decoration: none;
 }
-.hero {
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-}
-.hero-content {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 8px;
-}
-.btn-primary {
-  background: #ffd700;
-  color: #002244;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 20px;
-}
-.site-footer {
-  background: #002244;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-form {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-}
-input, textarea {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-}
+
+/* Hero Section */
 .hero {
   height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
-  background-attachment: fixed; /* Creates parallax scroll effect */
   background-position: center;
+  background-attachment: fixed; /* Parallax effect */
   color: white;
   text-align: center;
   position: relative;
@@ -73,27 +39,64 @@ input, textarea {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* overlay effect */
+  background-color: rgba(0, 0, 0, 0.5); /* overlay */
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
 }
-/* ✨ Floating Animation for Solar Icon */
+
+/* Buttons */
+.btn-primary {
+  background: #ffd700;
+  color: #002244;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Footer */
+.site-footer {
+  background: #002244;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Form */
+form {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+/* ✨ Floating Animation for Solar Icons */
 .floating-icon {
   position: absolute;
-  top: 10%;
-  right: 10%;
-  animation: float 3s ease-in-out infinite;
   opacity: 0.8;
   z-index: 2;
+  animation: float 3s ease-in-out infinite;
 }
+
+.icon1 { top: 10%; right: 10%; }
+.icon2 { top: 20%; left: 15%; animation-delay: 1s; }
+.icon3 { bottom: 15%; right: 20%; animation-delay: 2s; }
 
 @keyframes float {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-20px); }
   100% { transform: translateY(0); }
 }
-
