@@ -1,53 +1,35 @@
-<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raynexuss - Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav-container">
-      <div class="logo">Raynexuss</div>
-      <nav class="nav-links" id="nav-links">
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Raynexuss</h1>
+      <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay">
-      <div class="hero-text">
-        <h1>Powering a Brighter Future</h1>
-        <p>Leading solar energy solutions for homes and businesses.</p>
-        <a href="services.html" class="btn-primary">Explore Services</a>
-      </div>
+  <section class="hero" style="background-image: url('assets/images/solar-hero.jpg');">
+    <div class="hero-content">
+      <h2>Powering a Brighter Future</h2>
+      <p>Your partner in sustainable solar solutions.</p>
+      <a href="services.html" class="btn-primary">Explore Our Services</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Raynexuss. All rights reserved.</p>
-    </div>
+  <footer class="site-footer">
+    <p>© 2025 Raynexuss. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Toggle menu on small screens
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      document.getElementById('nav-links').classList.toggle('show');
-    });
-  </script>
-
 </body>
 </html>
