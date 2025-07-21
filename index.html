@@ -1,51 +1,24 @@
+<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raynexuss - Solar Energy Experts</title>
+  <title>Raynexuss - Home</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Header -->
   <header class="header">
     <div class="container nav-container">
       <div class="logo">Raynexuss</div>
-      <nav id="nav-links">
+      <nav class="nav-links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        
-   
-        <main class="contact-form">
-  <section>
-    <h2>Contact Us</h2>
-    <form action="#" method="post" id="contactForm">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-</main>
-        <section style="padding: 40px 20px; text-align: center;">
-  <h3>Visit Us</h3>
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.009162234412!2d73.85534941533347!3d18.520430423040424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07f2e3d11e1%3A0xb3f0112312e14a2a!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1672603278391" 
-    width="90%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-  </iframe>
-</section>
-
-
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </div>
@@ -53,77 +26,28 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Power Your Future with Raynexuss</h1>
-      <p>Affordable. Sustainable. Reliable solar solutions.</p>
-      <a href="services.html" class="btn-primary">View Services</a>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="services">
-    <h2>What We Offer</h2>
-    <div class="service-cards">
-      <div class="card">
-        <img src="https://img.icons8.com/ios/100/solar-panel.png" alt="Install">
-        <h3>Solar Installations</h3>
-        <p>Efficient and custom installations for all property types.</p>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios/100/settings.png" alt="Maintenance">
-        <h3>Maintenance</h3>
-        <p>End-to-end service and monitoring for system performance.</p>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios/100/help.png" alt="Support">
-        <h3>Support</h3>
-        <p>24/7 customer support to solve any issues fast.</p>
+    <div class="overlay">
+      <div class="hero-text">
+        <h1>Powering a Brighter Future</h1>
+        <p>Leading solar energy solutions for homes and businesses.</p>
+        <a href="services.html" class="btn-primary">Explore Services</a>
       </div>
     </div>
   </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-box">
-      <p>"Raynexuss delivered an amazing solar setup with zero hassle. Highly recommended!"</p>
-      <span>— Priya S., Pune</span>
-    </div>
-    <div class="testimonial-box">
-      <p>"Professional, prompt, and truly customer-focused. 5 stars!"</p>
-      <span>— Anil K., Bangalore</span>
-    </div>
-  </section>
-
-  <section class="counters">
-  <div class="container">
-    <div class="counter-box">
-      <span class="counter" data-target="500">0</span>
-      <p>Projects Completed</p>
-    </div>
-    <div class="counter-box">
-      <span class="counter" data-target="120">0</span>
-      <p>Active Clients</p>
-    </div>
-    <div class="counter-box">
-      <span class="counter" data-target="24">0</span>
-      <p>Support Hours</p>
-    </div>
-  </div>
-</section>
-
 
   <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 Raynexuss. All rights reserved.</p>
-      <div class="socials">
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook--v1.png"/></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/linkedin.png"/></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png"/></a>
-      </div>
     </div>
   </footer>
+
+  <script>
+    // Toggle menu on small screens
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('nav-links').classList.toggle('show');
+    });
+  </script>
 
 </body>
 </html>
