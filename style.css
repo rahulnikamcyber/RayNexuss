@@ -81,4 +81,19 @@ input, textarea {
   position: relative;
   z-index: 2;
 }
+/* ✨ Floating Animation for Solar Icon */
+.floating-icon {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
 
