@@ -26,3 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   counters.forEach(counter => observer.observe(counter));
 });
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  alert("Thank you for contacting Raynexuss! We'll get back to you soon.");
+});
