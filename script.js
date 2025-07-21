@@ -1,23 +1,28 @@
-document.getElementById('menu-toggle').addEventListener('click', function () {
-  const navLinks = document.getElementById('nav-links');
-  navLinks.classList.toggle('show');
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = +el.getAttribute("data-target");
+        let count = 0;
+
+        const update = () => {
+          const speed = 20;
+          if (count < target) {
+            count += Math.ceil(target / speed);
+            el.innerText = count > target ? target : count;
+            setTimeout(update, 30);
+          }
+        };
+        update();
+        observer.unobserve(el);
+      }
+    });
+  }, {
+    threshold: 1.0
+  });
+
+  counters.forEach(counter => observer.observe(counter));
 });
-.counters {
-  background: #fff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.counter-box {
-  display: inline-block;
-  margin: 20px;
-  font-size: 2.5rem;
-  color: #002244;
-}
-
-.counter-box p {
-  font-size: 1rem;
-  margin-top: 10px;
-  color: #444;
-}
-
