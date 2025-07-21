@@ -3,52 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raynexuss - Home</title>
+  <title>Raynexuss - Solar Energy Experts</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">Raynexuss</h1>
-      <nav>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">Raynexuss</div>
+      <nav id="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
-      <h2>Your Trusted Solar Partner</h2>
-      <p>Empowering your future with reliable and sustainable solar energy solutions.</p>
-      <a href="services.html" class="btn">Explore Services</a>
+    <div class="hero-content">
+      <h1>Power Your Future with Raynexuss</h1>
+      <p>Affordable. Sustainable. Reliable solar solutions.</p>
+      <a href="services.html" class="btn-primary">View Services</a>
     </div>
   </section>
 
-  <section class="features">
-    <div class="container">
-      <div class="feature-box">
-        <h3>Installation</h3>
-        <p>Custom solar panel installations tailored to your needs.</p>
+  <!-- Services -->
+  <section class="services">
+    <h2>What We Offer</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/solar-panel.png" alt="Install">
+        <h3>Solar Installations</h3>
+        <p>Efficient and custom installations for all property types.</p>
       </div>
-      <div class="feature-box">
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/settings.png" alt="Maintenance">
         <h3>Maintenance</h3>
-        <p>Reliable maintenance and long-term performance assurance.</p>
+        <p>End-to-end service and monitoring for system performance.</p>
       </div>
-      <div class="feature-box">
+      <div class="card">
+        <img src="https://img.icons8.com/ios/100/help.png" alt="Support">
         <h3>Support</h3>
-        <p>24/7 support and expert consultation services.</p>
+        <p>24/7 customer support to solve any issues fast.</p>
       </div>
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-box">
+      <p>"Raynexuss delivered an amazing solar setup with zero hassle. Highly recommended!"</p>
+      <span>— Priya S., Pune</span>
+    </div>
+    <div class="testimonial-box">
+      <p>"Professional, prompt, and truly customer-focused. 5 stars!"</p>
+      <span>— Anil K., Bangalore</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 Raynexuss. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook--v1.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/linkedin.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png"/></a>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
