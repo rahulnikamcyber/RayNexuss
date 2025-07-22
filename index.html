@@ -2,47 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raynexuss - Home</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raynexuss | Premium Solar Solutions</title>
+  
+  <!-- Meta Tags -->
+  <meta name="description" content="Raynexuss offers premium solar installation and maintenance services. Power your future with elegance and sustainability.">
+  <meta name="keywords" content="Solar Energy, Raynexuss, Luxury Solar, Clean Energy, Premium Solar Panels">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/solar-panel.png" type="image/png">
+
+  <link rel="stylesheet" href="luxury-style.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+  <!-- Navbar -->
+  <nav class="navbar">
     <div class="container">
       <h1 class="logo">Raynexuss</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <h2>Illuminate Tomorrow with Elegance</h2>
+      <p>Luxury Solar Solutions for Modern Living</p>
+      <a href="contact.html" class="btn-primary">Request a Consultation</a>
     </div>
   </header>
 
-  <!-- HERO SECTION with Floating Icons and Background Image -->
-<section class="hero" style="background-image: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80');">
-
-
-    <!-- 🔆 Floating Icons -->
-    <img src="https://img.icons8.com/ios-filled/100/ffffff/solar-panel.png" class="floating-icon icon1" alt="solar" />
-    <img src="https://img.icons8.com/ios-filled/100/ffffff/sun--v1.png" class="floating-icon icon2" alt="sun" />
-    <img src="https://img.icons8.com/ios-filled/100/ffffff/charger.png" class="floating-icon icon3" alt="battery" />
-
-    <!-- 👇 Hero Text -->
-    <div class="hero-content">
-      <h1>Powering a Brighter Future</h1>
-      <p>Your trusted solar partner in innovation & sustainability.</p>
-      <a href="services.html" class="btn-primary">Explore Services</a>
+  <!-- About -->
+  <section class="about" data-aos="fade-up">
+    <div class="container">
+      <h2>About Raynexuss</h2>
+      <p>At Raynexuss, we combine sustainability and sophistication. Our premium solar installations are engineered for efficiency, aesthetics, and long-term performance.</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>© 2025 Raynexuss. All rights reserved.</p>
+  <!-- Services Preview -->
+  <section class="services-preview" data-aos="fade-up">
+    <div class="container">
+      <h2>Our Expertise</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Tailored Installations</h3>
+          <p>Custom solar panel systems designed for elite homes and businesses.</p>
+        </div>
+        <div class="card">
+          <h3>Maintenance Excellence</h3>
+          <p>Luxury-grade cleaning and maintenance to preserve peak performance.</p>
+        </div>
+        <div class="card">
+          <h3>Energy Consultation</h3>
+          <p>Maximize ROI with our in-depth assessment and modeling reports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Raynexuss. Crafted with excellence.</p>
+    </div>
   </footer>
 
+  <!-- AOS Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
