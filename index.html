@@ -7,17 +7,150 @@
   <meta name="description" content="Perplexity AI: Accurate, instant answers. Explore the future of AI-powered knowledge.">
   <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      background: #f8fafc;
+    }
+    .navbar {
+      background: #1b1d36;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    .logo {
+      color: #0abdc6;
+      font-weight: 700;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+    }
+    .nav-links li a {
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .nav-links li a.active, .nav-links li a:hover {
+      background: #0abdc6;
+      color: #0d0925;
+      transition: 0.3s;
+    }
+    .hero-section {
+      min-height: 60vh;
+      background: linear-gradient(120deg,#10024d 70%,#0abdc6 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px 50px 20px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-text h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .hero-text p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: #e3e7ef;
+    }
+    .cta-btn {
+      background: #fff;
+      color: #10024d;
+      padding: 14px 38px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.2s;
+      cursor: pointer;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-top: 15px;
+    }
+    .cta-btn:hover {
+      background: #ffe146;
+      color: #0abdc6;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .main-content {
+      max-width: 1140px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 38px;
+      justify-content: center;
+      margin-top: -50px;
+      z-index: 2;
+    }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(16,2,77,0.06);
+      padding: 32px 28px;
+      flex: 1 0 350px;
+      min-width: 320px;
+      max-width: 450px;
+      margin: 20px 5px;
+      transition: box-shadow 0.2s;
+    }
+    .card h2 {
+      color: #0abdc6;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .card p {
+      margin-bottom: 15px;
+      color: #19224d;
+    }
+    .card ul {
+      margin-left: 18px;
+      margin-bottom: 6px;
+      color: #10024d;
+    }
+    .card .update-placeholder {
+      color: #7dbbbd;
+      font-style: italic;
+    }
+    .contact-section {
+      background: #f2fcfe;
+      padding: 30px 0;
+      margin-top: 22px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .social-icons {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .social-icons a {
+      margin: 0 8px;
+      display: inline-block;
+      transition: transform 0.22s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.25);
+    }
+    @media (max-width: 900px) {
+      .main-content { flex-direction: column; gap: 20px; }
+      .hero-text h2 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
       <h1 class="logo">Perplexity AI</h1>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#about">What is Perplexity AI?</a></li>
+        <li><a href="#about">What is Perplexity?</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#blog">Updates</a></li>
       </ul>
@@ -25,45 +158,45 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero-section" style="background: linear-gradient(135deg,#10024d 70%,#0abdc6 100%)">
-    <div class="hero-text" data-aos="fade-up" style="color: #fff;">
+  <header class="hero-section">
+    <div class="hero-text" data-aos="fade-up">
       <h2>Welcome to Perplexity AI</h2>
-      <p>Your AI-powered companion for smarter, faster answers.</p>
+      <p>Your AI-powered tool for fast, precise answers and fresh discoveries—at your fingertips.</p>
+      <a href="#about"><button class="cta-btn">Explore Perplexity</button></a>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="about" data-aos="fade-right">
-    <div class="container">
+  <div class="main-content">
+
+    <!-- About Card -->
+    <section id="about" class="card" data-aos="fade-right">
       <h2>What is Perplexity AI?</h2>
       <p>
-        Perplexity AI is a cutting-edge platform delivering instant, accurate answers to your questions using advanced artificial intelligence. Whether you’re researching, learning, or just curious, Perplexity AI makes discovering knowledge fast, friendly, and fun.
+        Perplexity AI answers your questions instantly by using advanced artificial intelligence and providing relevant, trustworthy sources.
       </p>
       <ul>
-        <li>⚡ Instant, reliable AI-powered answers</li>
-        <li>🔍 Sources and context you can trust</li>
-        <li>📰 Regular updates and new features</li>
+        <li>⚡ <b>Real-time answers</b> to any question</li>
+        <li>🔍 <b>Reliable sources</b> you can check</li>
+        <li>🧠 <b>Easy-to-use, friendly design</b></li>
+        <li>🚀 <b>Perfect for students, teachers, and businesses</b></li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section" data-aos="fade-up">
-    <div class="container">
+    <!-- Blog/Updates Card -->
+    <section id="blog" class="card" data-aos="fade-up">
+      <h2>Latest Updates</h2>
+      <p class="update-placeholder">(Blog space coming soon! Exciting news and AI tips will appear here.)</p>
+    </section>
+
+  </div>
+
+  <!-- Contact Section Card -->
+  <section id="contact" class="contact-section card" style="max-width:600px; margin:40px auto 20px auto;" data-aos="fade-up">
       <h2>Contact Us</h2>
       <p>
-        Interested in Perplexity AI? Want to collaborate, ask a question, or offer feedback? <br>
-        Email: <a href="mailto:hello@perplexity.ai">hello@perplexity.ai</a>
+        Want to collaborate or leave feedback?<br>
+        Email: <a href="mailto:hello@perplexity.ai" style="color:#0abdc6;font-weight:500;">hello@perplexity.ai</a>
       </p>
-    </div>
-  </section>
-
-  <!-- Blog/Updates Section -->
-  <section id="blog" data-aos="fade-up">
-    <div class="container">
-      <h2>Latest Updates</h2>
-      <p><em>(Blog space coming soon! Check back for news and tips.)</em></p>
-    </div>
   </section>
 
   <!-- Footer -->
@@ -74,11 +207,10 @@
         <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" /></a>
         <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub" /></a>
       </div>
-      <p>&copy; 2025 Perplexity AI. Built for your curiosity.</p>
+      <p style="color:#c0e4e7;">&copy; 2025 Perplexity AI. Built for your curiosity.</p>
     </div>
   </footer>
 
-  <!-- Animation Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 </body>
