@@ -2,22 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Perplexity AI – The Premium AI Answer Engine</title>
-  <meta name="description" content="Experience the next level of AI-powered answers. Instant, reliable, premium knowledge with Perplexity AI.">
-  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="description" content="Experience the next level of AI-powered answers. Instant, reliable, premium knowledge with Perplexity AI." />
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
+    /* Reset and base */
     body {
       font-family: 'Montserrat', Arial, sans-serif;
       background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%);
       color: #16192c;
       margin: 0;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Navbar */
     .navbar {
-      background: rgba(16,2,77,0.92);
-      box-shadow: 0 4px 20px rgba(16,2,77,0.10);
+      background: rgba(16, 2, 77, 0.92);
+      box-shadow: 0 4px 20px rgba(16, 2, 77, 0.10);
+      padding: 13px 2%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .logo {
       color: #53fff7;
@@ -25,98 +42,367 @@
       font-size: 2.2rem;
       letter-spacing: 1px;
     }
-    .nav-links { list-style: none; display: flex; gap: 30px; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
     .nav-links li a {
-      color: #fff; padding: 8px 20px; border-radius: 6px;
-      font-weight: 600; text-decoration: none; transition: 0.3s;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
     }
-    .nav-links li a.active,.nav-links li a:hover {
-      background: #53fff7; color: #10024d; box-shadow: 0 2px 6px rgba(83,255,247,.12);
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      background: #53fff7;
+      color: #10024d;
+      box-shadow: 0 2px 6px rgba(83, 255, 247, 0.12);
     }
+
+    /* Hero Section */
     .hero-section {
       min-height: 60vh;
-      background: linear-gradient(120deg,#10024d 60%,#53fff7 100%);
-      display: flex; align-items: center; justify-content: center; flex-direction: column;
-      text-align: center; color: #fff; position: relative; overflow: hidden;
+      background: linear-gradient(120deg, #10024d 60%, #53fff7 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
       padding: 70px 15px 60px 15px;
     }
     .hero-section::before {
-      content: ""; position: absolute; inset: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background: url('https://img.freepik.com/free-vector/abstract-technology-background_23-2149170121.jpg') no-repeat center center/cover;
-      opacity: 0.08; z-index: 0;
+      opacity: 0.08;
+      z-index: 0;
     }
-    .hero-text { position: relative; z-index: 2; }
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
     .hero-title {
-      font-size: 3.3rem; font-weight: 700; margin-bottom: 14px;
-      background: linear-gradient(92deg,#53fff7,#ffe146);
-      background-clip: text; -webkit-background-clip: text;
-      color: transparent; -webkit-text-fill-color: transparent;
+      font-size: 3.3rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      background: linear-gradient(92deg, #53fff7, #ffe146);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
       animation: pop-in 1.2s ease;
+      user-select: none;
     }
-    @keyframes pop-in { 0%{transform: scale(.95);opacity:0;}100%{transform:scale(1);opacity:1;} }
-    .hero-text p { font-size: 1.4rem; margin-bottom: 32px; color: #f0fdfa; font-weight: 400;}
+    @keyframes pop-in {
+      0% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .hero-text p {
+      font-size: 1.4rem;
+      margin-bottom: 32px;
+      color: #f0fdfa;
+      font-weight: 400;
+      line-height: 1.4;
+    }
     .cta-btn {
-      background: linear-gradient(90deg,#ffe146 60%,#0abdc6 100%);
-      color: #10024d; font-size: 1.15rem; font-weight: 700; border: none; border-radius: 30px;
-      padding: 14px 34px; transition: 0.22s;
-      box-shadow: 0 3px 18px rgba(16,2,77,0.13);
-      cursor: pointer; letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ffe146 60%, #0abdc6 100%);
+      color: #10024d;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      padding: 14px 34px;
+      transition: 0.22s;
+      box-shadow: 0 3px 18px rgba(16, 2, 77, 0.13);
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      user-select: none;
     }
-    .cta-btn:hover { background: #fff; color: #0abdc6; transform: scale(1.05);}
+    .cta-btn:hover {
+      background: #fff;
+      color: #0abdc6;
+      transform: scale(1.05);
+    }
+
+    /* Counters */
+    .counters {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin: 38px 0 12px 0;
+      color: #ffe146;
+      font-weight: 700;
+      user-select: none;
+    }
+    .counter-item {
+      text-align: center;
+      color: #ffe146;
+    }
+    .counter-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ffe146;
+    }
+    .counter-label {
+      font-size: 1rem;
+      color: #0abdc6;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* Feature Tiles */
+    .feature-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 27px;
+      margin: 40px 10px 15px 10px;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .feature-tile {
+      flex: 1 0 180px;
+      max-width: 210px;
+      min-width: 170px;
+      background: rgba(16, 2, 77, 0.86);
+      color: #53fff7;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(83, 255, 247, 0.13);
+      text-align: center;
+      padding: 36px 14px 24px 14px;
+      cursor: pointer;
+      transition: transform 0.21s ease, box-shadow 0.22s ease;
+      user-select: none;
+    }
+    .feature-tile:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 36px #0abdc675;
+    }
+    .feature-tile img {
+      margin-bottom: 14px;
+      width: 50px;
+      height: 50px;
+      user-select: none;
+    }
+    .feature-tile .feature-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #ffe146;
+      margin-bottom: 6px;
+      user-select: none;
+    }
+    .feature-tile .feature-desc {
+      font-size: 0.93rem;
+      color: #b5f8fc;
+      user-select: none;
+    }
+
+    /* Main content cards */
     .main-content {
-      max-width: 1200px; margin: -56px auto 0; display: flex; flex-wrap: wrap; gap: 36px; justify-content: center;
-      z-index: 3; position: relative;
+      max-width: 1200px;
+      margin: 40px auto 40px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      padding: 0 10px;
     }
     .card {
-      background: rgba(255,255,255,.62);
-      border-radius: 19px; box-shadow: 0 10px 30px rgba(16,2,77,0.07);
-      padding: 36px 28px; min-width: 330px; max-width: 420px; margin: 19px 6px;
-      backdrop-filter: blur(3.5px);
-      border: 1.2px solid rgba(83,255,247,.15);
-      transition: box-shadow 0.25s, transform 0.2s;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(16, 2, 77, 0.08);
+      padding: 38px 32px;
+      min-width: 340px;
+      max-width: 450px;
+      margin: 14px 6px;
+      backdrop-filter: blur(8px);
+      border: 1.3px solid rgba(83, 255, 247, 0.18);
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+      user-select: none;
     }
-    .card:hover { box-shadow: 0 16px 44px rgba(16,2,77,0.12); transform: translateY(-6px) scale(1.01);}
-    .card h2 { color: #0abdc6; font-weight:700; margin-bottom: 10px; }
-    .card ul { color: #16192c; margin: 18px 0 0 28px; }
+    .card:hover {
+      box-shadow: 0 20px 52px rgba(16, 2, 77, 0.15);
+      transform: translateY(-8px) scale(1.02);
+    }
+    .card h2 {
+      color: #0abdc6;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .card p {
+      line-height: 1.5;
+      color: #19224d;
+    }
+    .card ul {
+      margin-top: 18px;
+      margin-left: 32px;
+      color: #16192c;
+      font-weight: 600;
+    }
+    .card ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Testimonials */
     .testimonial-section {
-      text-align: center; margin: 16px 0 24px 0;
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 22px;
     }
     .testimonial {
       font-style: italic;
-      background: rgba(83,255,247,.07);
-      border-radius: 12px;
-      margin: 10px auto 0 auto;
-      max-width: 480px;
-      padding: 20px 24px;
+      background: rgba(83, 255, 247, 0.09);
+      border-radius: 14px;
+      max-width: 500px;
+      margin: 14px auto 8px auto;
+      padding: 24px 28px;
       color: #141e36;
-      box-shadow: 0 2px 8px rgba(16,2,77,0.06);
+      box-shadow: 0 4px 14px rgba(16, 2, 77, 0.07);
+      user-select: none;
     }
-    .testimonial strong { color:#0abdc6;}
+    .testimonial strong {
+      color: #0abdc6;
+    }
+
+    /* Contact Section */
     .contact-section {
-      background: #fffdfaee; padding: 32px 0; margin: 35px auto 0 auto; border-radius: 16px;
-      text-align: center; box-shadow: 0 2px 13px rgba(16,2,77,0.07);
-      max-width: 580px;
+      background: #fffdfaee;
+      padding: 38px 0;
+      margin: 40px auto 40px auto;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 3px 17px rgba(16, 2, 77, 0.08);
+      max-width: 600px;
+      user-select: none;
     }
-    .contact-section a { color: #0abdc6; text-decoration:none; font-weight:600;}
-    .contact-section a:hover { text-decoration: underline;}
-    .social-icons { margin: 20px 0 8px 0; }
+    .contact-section a {
+      color: #0abdc6;
+      font-weight: 600;
+      text-decoration: none;
+      transition: text-decoration 0.3s;
+    }
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #10024d;
+      color: #cef6f9;
+      padding: 1.5rem 0 0.7rem 0;
+      text-align: center;
+      margin-top: 37px;
+      user-select: none;
+    }
+    .social-icons {
+      margin: 20px 0 12px 0;
+    }
     .social-icons a {
-      margin: 0 11px; display: inline-block; transition: transform 0.19s;
+      margin: 0 12px;
+      display: inline-block;
+      transition: transform 0.19s ease;
     }
-    .social-icons a:hover { transform: scale(1.19);}
-    footer { background: #10024d; color: #cef6f9; padding: 1.4rem 0 0.7rem 0;
-      text-align: center; margin-top: 37px; }
-    @media (max-width:900px){
-      .main-content { flex-direction: column; gap: 20px;}
-      .hero-title { font-size:2.1rem;}
+    .social-icons a:hover {
+      transform: scale(1.22);
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(90%) saturate(140%);
+    }
+
+    /* Floating Chat Button */
+    .chat-button {
+      position: fixed;
+      bottom: 94px;
+      right: 24px;
+      background: #0abdc6;
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 26px;
+      font-weight: 600;
+      box-shadow: 0 2px 10px #0abdc637;
+      text-decoration: none;
+      z-index: 100;
+      user-select: none;
+      transition: background 0.3s;
+    }
+    .chat-button:hover {
+      background: #38d1e1;
+    }
+    
+    /* Scroll to top button */
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 38px;
+      right: 24px;
+      z-index: 99;
+      padding: 14px 18px;
+      background: linear-gradient(92deg, #53fff7, #ffe146);
+      color: #10024d;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 100px;
+      box-shadow: 0 2px 16px #0abdc667;
+      cursor: pointer;
+      transition: background 0.17s, box-shadow 0.16s;
+      user-select: none;
+    }
+    #scrollTopBtn:hover {
+      background: #fff;
+      color: #0abdc6;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .main-content {
+        flex-direction: column;
+        gap: 26px;
+      }
+      .feature-tiles {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-title {
+        font-size: 2.3rem;
+      }
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+      .counter-number {
+        font-size: 2rem;
+      }
+      .counter-label {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container" style="max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:13px 2%;">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
       <h1 class="logo">Perplexity AI</h1>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -127,76 +413,155 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero-section">
+  <!-- Hero Section -->
+  <header class="hero-section" role="banner">
     <div class="hero-text" data-aos="fade-up">
-      <div class="hero-title">Experience Premium AI Answers</div>
-      <p>The world’s fastest way to get precise information and knowledge—powered by Perplexity AI.<br>
-      <span style="font-size:1.09rem;color:#ffe146;">Clean design. Pro performance. Always reliable.</span>
+      <div class="hero-title" aria-label="Experience Premium AI Answers">
+        Experience Premium AI Answers
+      </div>
+      <p>
+        The world’s fastest way to get precise information and knowledge—powered by Perplexity AI.<br />
+        <span style="font-size: 1.1rem; color: #ffe146;" aria-label="Clean design. Pro performance. Always reliable.">Clean design. Pro performance. Always reliable.</span>
       </p>
-      <a href="#about"><button class="cta-btn">Discover Perplexity</button></a>
+
+      <!-- Animated Counters -->
+      <div class="counters" aria-live="polite" aria-atomic="true">
+        <div class="counter-item" aria-label="Answers Given: 1,234">
+          <div id="answersCount" class="counter-number">0</div>
+          <div class="counter-label">Answers Given</div>
+        </div>
+        <div class="counter-item" aria-label="Happy Users: 245">
+          <div id="usersCount" class="counter-number">0</div>
+          <div class="counter-label">Happy Users</div>
+        </div>
+      </div>
+
+      <a href="#about"><button class="cta-btn" aria-label="Discover Perplexity">Discover Perplexity</button></a>
     </div>
   </header>
 
-  <!-- Main Content Cards -->
-  <div class="main-content">
+  <!-- Feature Tiles -->
+  <section class="feature-tiles" aria-label="Key features of Perplexity AI">
+    <div class="feature-tile" tabindex="0"
+      aria-describedby="feat1-desc" role="region" aria-label="Instant Answers">
+      <img src="https://img.icons8.com/fluency/48/lightning-bolt.png" alt="" aria-hidden="true" />
+      <div class="feature-title">Instant Answers</div>
+      <div id="feat1-desc" class="feature-desc">Get reliable info right away</div>
+    </div>
 
-    <!-- About Card -->
-    <section id="about" class="card" data-aos="fade-right">
-      <h2>What is Perplexity AI?</h2>
+    <div class="feature-tile" tabindex="0"
+      aria-describedby="feat2-desc" role="region" aria-label="Trusted Sources">
+      <img src="https://img.icons8.com/fluency/48/checked-checkbox.png" alt="" aria-hidden="true" />
+      <div class="feature-title">Trusted Sources</div>
+      <div id="feat2-desc" class="feature-desc">Answers you can verify</div>
+    </div>
+
+    <div class="feature-tile" tabindex="0"
+      aria-describedby="feat3-desc" role="region" aria-label="Super Fast">
+      <img src="https://img.icons8.com/fluency/48/rocket.png" alt="" aria-hidden="true" />
+      <div class="feature-title">Super Fast</div>
+      <div id="feat3-desc" class="feature-desc">Blazingly responsive engine</div>
+    </div>
+  </section>
+
+  <!-- Main Content Cards -->
+  <main class="main-content" role="main">
+    <section id="about" class="card" data-aos="fade-right" aria-labelledby="about-title">
+      <h2 id="about-title">What is Perplexity AI?</h2>
       <p>
         Perplexity AI is your always-on, AI-powered guide—delivering instant, thoroughly sourced answers, summaries, and insights.
       </p>
       <ul>
-        <li>⚡ <b>Real-time answers on ANY topic</b></li>
-        <li>🔍 <b>Verified sources</b> so you trust every reply</li>
-        <li>🧠 <b>Modern, intuitive experience</b>—for everyone</li>
-        <li>🚀 <b>Used by students, pros, and creators globally</b></li>
+        <li>⚡ <strong>Real-time answers on ANY topic</strong></li>
+        <li>🔍 <strong>Verified sources</strong> so you trust every reply</li>
+        <li>🧠 <strong>Modern, intuitive experience</strong>—for everyone</li>
+        <li>🚀 <strong>Used by students, pros, and creators globally</strong></li>
       </ul>
     </section>
 
-    <!-- Testimonials Card -->
-    <section class="card" data-aos="fade-up">
-      <h2>Why Choose Perplexity?</h2>
+    <section class="card" data-aos="fade-up" aria-labelledby="testimonial-title">
+      <h2 id="testimonial-title">Why Choose Perplexity?</h2>
       <div class="testimonial-section">
-        <div class="testimonial">“<strong>It’s like a premium search, but faster and more reliable—my secret research tool.”</strong><br><span style="color:#888;font-size:.99rem;">– A satisfied user</span></div>
-        <div class="testimonial" style="margin-top:12px;">“The interface is SO clean and professional. Feels like a high-end app!”<br><span style="color:#888;font-size:.99rem;">– Tech reviewer</span></div>
+        <div class="testimonial" tabindex="0">
+          “<strong>It’s like a premium search, but faster and more reliable—my secret research tool.</strong>”<br />
+          <span style="color:#888; font-size:0.99rem;" aria-label="A satisfied user">– A satisfied user</span>
+        </div>
+        <div class="testimonial" tabindex="0" style="margin-top:12px;">
+          “The interface is SO clean and professional. Feels like a high-end app!”<br />
+          <span style="color:#888; font-size:0.99rem;" aria-label="Tech reviewer">– Tech reviewer</span>
+        </div>
       </div>
     </section>
 
-    <!-- Blog/Updates Card -->
-    <section id="blog" class="card" data-aos="fade-left">
-      <h2>Latest Updates</h2>
-      <p style="color:#7dbbbd;font-style:italic;">(Premium blog and tips coming soon!)</p>
+    <section id="blog" class="card" data-aos="fade-left" aria-labelledby="updates-title">
+      <h2 id="updates-title">Latest Updates</h2>
+      <p style="color:#7dbbbd; font-style: italic;">
+        (Premium blog and tips coming soon!)
+      </p>
     </section>
+  </main>
 
-  </div>
-
-  <!-- Contact Card -->
-  <section id="contact" class="contact-section card" data-aos="fade-up">
-    <h2>Contact Us</h2>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section card" data-aos="fade-up" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact Us</h2>
     <p>
-      Ready to partner or want to know more? <br>
+      Ready to partner or want to know more?<br />
       <a href="mailto:hello@perplexity.ai">hello@perplexity.ai</a>
     </p>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
-      <div class="social-icons">
-        <a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter" /></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn" /></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub" /></a>
+      <div class="social-icons" aria-label="Social media links">
+        <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter icon" /></a>
+        <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn icon" /></a>
+        <a href="#" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub icon" /></a>
       </div>
-      <div>
-        <span style="color:#ffe146;font-weight:600;">Perplexity AI</span>
-        &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp;
-        <span style="font-size:.98rem;">&copy; 2025</span>
+      <div style="margin-top: 6px; font-weight: 600; color: #ffe146;">
+        Perplexity AI &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp; &copy; 2025
       </div>
     </div>
   </footer>
+
+  <!-- Floating Chat / Ask Button -->
+  <a href="mailto:hello@perplexity.ai" class="chat-button" aria-label="Open chat to ask questions">💬 Chat/Ask</a>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top">&#8679;</button>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    // Initialize animation library
+    AOS.init();
+
+    // Animated Number Counters
+    function animateValue(id, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start ? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var obj = document.getElementById(id);
+      var timer = setInterval(function () {
+        current += increment;
+        obj.innerText = current.toLocaleString();
+        if (current === end) clearInterval(timer);
+      }, stepTime);
+    }
+    // Start counters with a slight delay
+    setTimeout(() => {
+      animateValue("answersCount", 0, 1234, 1200);
+      animateValue("usersCount", 0, 245, 1500);
+    }, 1000);
+
+    // Scroll-to-top button logic
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 240 ? "block" : "none";
+    };
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
 </body>
 </html>
