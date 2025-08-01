@@ -3,142 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perplexity AI - Discover Smarter Answers</title>
-  <meta name="description" content="Perplexity AI: Accurate, instant answers. Explore the future of AI-powered knowledge.">
+  <title>Perplexity AI – The Premium AI Answer Engine</title>
+  <meta name="description" content="Experience the next level of AI-powered answers. Instant, reliable, premium knowledge with Perplexity AI.">
   <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      background: #f8fafc;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%);
+      color: #16192c;
+      margin: 0;
     }
     .navbar {
-      background: #1b1d36;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      background: rgba(16,2,77,0.92);
+      box-shadow: 0 4px 20px rgba(16,2,77,0.10);
     }
     .logo {
-      color: #0abdc6;
+      color: #53fff7;
       font-weight: 700;
-      font-size: 1.7rem;
+      font-size: 2.2rem;
       letter-spacing: 1px;
     }
+    .nav-links { list-style: none; display: flex; gap: 30px; }
     .nav-links li a {
-      color: #fff;
-      border-radius: 6px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      color: #fff; padding: 8px 20px; border-radius: 6px;
+      font-weight: 600; text-decoration: none; transition: 0.3s;
     }
-    .nav-links li a.active, .nav-links li a:hover {
-      background: #0abdc6;
-      color: #0d0925;
-      transition: 0.3s;
+    .nav-links li a.active,.nav-links li a:hover {
+      background: #53fff7; color: #10024d; box-shadow: 0 2px 6px rgba(83,255,247,.12);
     }
     .hero-section {
       min-height: 60vh;
-      background: linear-gradient(120deg,#10024d 70%,#0abdc6 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px 50px 20px;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(120deg,#10024d 60%,#53fff7 100%);
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      text-align: center; color: #fff; position: relative; overflow: hidden;
+      padding: 70px 15px 60px 15px;
     }
-    .hero-text h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
+    .hero-section::before {
+      content: ""; position: absolute; inset: 0;
+      background: url('https://img.freepik.com/free-vector/abstract-technology-background_23-2149170121.jpg') no-repeat center center/cover;
+      opacity: 0.08; z-index: 0;
     }
-    .hero-text p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      color: #e3e7ef;
+    .hero-text { position: relative; z-index: 2; }
+    .hero-title {
+      font-size: 3.3rem; font-weight: 700; margin-bottom: 14px;
+      background: linear-gradient(92deg,#53fff7,#ffe146);
+      background-clip: text; -webkit-background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
+      animation: pop-in 1.2s ease;
     }
+    @keyframes pop-in { 0%{transform: scale(.95);opacity:0;}100%{transform:scale(1);opacity:1;} }
+    .hero-text p { font-size: 1.4rem; margin-bottom: 32px; color: #f0fdfa; font-weight: 400;}
     .cta-btn {
-      background: #fff;
-      color: #10024d;
-      padding: 14px 38px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: 0.2s;
-      cursor: pointer;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      margin-top: 15px;
+      background: linear-gradient(90deg,#ffe146 60%,#0abdc6 100%);
+      color: #10024d; font-size: 1.15rem; font-weight: 700; border: none; border-radius: 30px;
+      padding: 14px 34px; transition: 0.22s;
+      box-shadow: 0 3px 18px rgba(16,2,77,0.13);
+      cursor: pointer; letter-spacing: 0.5px;
     }
-    .cta-btn:hover {
-      background: #ffe146;
-      color: #0abdc6;
-      transform: translateY(-2px) scale(1.03);
-    }
+    .cta-btn:hover { background: #fff; color: #0abdc6; transform: scale(1.05);}
     .main-content {
-      max-width: 1140px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 38px;
-      justify-content: center;
-      margin-top: -50px;
-      z-index: 2;
+      max-width: 1200px; margin: -56px auto 0; display: flex; flex-wrap: wrap; gap: 36px; justify-content: center;
+      z-index: 3; position: relative;
     }
     .card {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(16,2,77,0.06);
-      padding: 32px 28px;
-      flex: 1 0 350px;
-      min-width: 320px;
-      max-width: 450px;
-      margin: 20px 5px;
-      transition: box-shadow 0.2s;
+      background: rgba(255,255,255,.62);
+      border-radius: 19px; box-shadow: 0 10px 30px rgba(16,2,77,0.07);
+      padding: 36px 28px; min-width: 330px; max-width: 420px; margin: 19px 6px;
+      backdrop-filter: blur(3.5px);
+      border: 1.2px solid rgba(83,255,247,.15);
+      transition: box-shadow 0.25s, transform 0.2s;
     }
-    .card h2 {
-      color: #0abdc6;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
+    .card:hover { box-shadow: 0 16px 44px rgba(16,2,77,0.12); transform: translateY(-6px) scale(1.01);}
+    .card h2 { color: #0abdc6; font-weight:700; margin-bottom: 10px; }
+    .card ul { color: #16192c; margin: 18px 0 0 28px; }
+    .testimonial-section {
+      text-align: center; margin: 16px 0 24px 0;
     }
-    .card p {
-      margin-bottom: 15px;
-      color: #19224d;
-    }
-    .card ul {
-      margin-left: 18px;
-      margin-bottom: 6px;
-      color: #10024d;
-    }
-    .card .update-placeholder {
-      color: #7dbbbd;
+    .testimonial {
       font-style: italic;
-    }
-    .contact-section {
-      background: #f2fcfe;
-      padding: 30px 0;
-      margin-top: 22px;
+      background: rgba(83,255,247,.07);
       border-radius: 12px;
-      text-align: center;
+      margin: 10px auto 0 auto;
+      max-width: 480px;
+      padding: 20px 24px;
+      color: #141e36;
+      box-shadow: 0 2px 8px rgba(16,2,77,0.06);
     }
-    .social-icons {
-      margin-top: 20px;
-      margin-bottom: 10px;
+    .testimonial strong { color:#0abdc6;}
+    .contact-section {
+      background: #fffdfaee; padding: 32px 0; margin: 35px auto 0 auto; border-radius: 16px;
+      text-align: center; box-shadow: 0 2px 13px rgba(16,2,77,0.07);
+      max-width: 580px;
     }
+    .contact-section a { color: #0abdc6; text-decoration:none; font-weight:600;}
+    .contact-section a:hover { text-decoration: underline;}
+    .social-icons { margin: 20px 0 8px 0; }
     .social-icons a {
-      margin: 0 8px;
-      display: inline-block;
-      transition: transform 0.22s;
+      margin: 0 11px; display: inline-block; transition: transform 0.19s;
     }
-    .social-icons a:hover {
-      transform: scale(1.25);
-    }
-    @media (max-width: 900px) {
-      .main-content { flex-direction: column; gap: 20px; }
-      .hero-text h2 { font-size: 2.2rem; }
+    .social-icons a:hover { transform: scale(1.19);}
+    footer { background: #10024d; color: #cef6f9; padding: 1.4rem 0 0.7rem 0;
+      text-align: center; margin-top: 37px; }
+    @media (max-width:900px){
+      .main-content { flex-direction: column; gap: 20px;}
+      .hero-title { font-size:2.1rem;}
     }
   </style>
 </head>
@@ -146,7 +116,7 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="container">
+    <div class="container" style="max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:13px 2%;">
       <h1 class="logo">Perplexity AI</h1>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -157,60 +127,75 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header class="hero-section">
     <div class="hero-text" data-aos="fade-up">
-      <h2>Welcome to Perplexity AI</h2>
-      <p>Your AI-powered tool for fast, precise answers and fresh discoveries—at your fingertips.</p>
-      <a href="#about"><button class="cta-btn">Explore Perplexity</button></a>
+      <div class="hero-title">Experience Premium AI Answers</div>
+      <p>The world’s fastest way to get precise information and knowledge—powered by Perplexity AI.<br>
+      <span style="font-size:1.09rem;color:#ffe146;">Clean design. Pro performance. Always reliable.</span>
+      </p>
+      <a href="#about"><button class="cta-btn">Discover Perplexity</button></a>
     </div>
   </header>
 
+  <!-- Main Content Cards -->
   <div class="main-content">
 
     <!-- About Card -->
     <section id="about" class="card" data-aos="fade-right">
       <h2>What is Perplexity AI?</h2>
       <p>
-        Perplexity AI answers your questions instantly by using advanced artificial intelligence and providing relevant, trustworthy sources.
+        Perplexity AI is your always-on, AI-powered guide—delivering instant, thoroughly sourced answers, summaries, and insights.
       </p>
       <ul>
-        <li>⚡ <b>Real-time answers</b> to any question</li>
-        <li>🔍 <b>Reliable sources</b> you can check</li>
-        <li>🧠 <b>Easy-to-use, friendly design</b></li>
-        <li>🚀 <b>Perfect for students, teachers, and businesses</b></li>
+        <li>⚡ <b>Real-time answers on ANY topic</b></li>
+        <li>🔍 <b>Verified sources</b> so you trust every reply</li>
+        <li>🧠 <b>Modern, intuitive experience</b>—for everyone</li>
+        <li>🚀 <b>Used by students, pros, and creators globally</b></li>
       </ul>
     </section>
 
+    <!-- Testimonials Card -->
+    <section class="card" data-aos="fade-up">
+      <h2>Why Choose Perplexity?</h2>
+      <div class="testimonial-section">
+        <div class="testimonial">“<strong>It’s like a premium search, but faster and more reliable—my secret research tool.”</strong><br><span style="color:#888;font-size:.99rem;">– A satisfied user</span></div>
+        <div class="testimonial" style="margin-top:12px;">“The interface is SO clean and professional. Feels like a high-end app!”<br><span style="color:#888;font-size:.99rem;">– Tech reviewer</span></div>
+      </div>
+    </section>
+
     <!-- Blog/Updates Card -->
-    <section id="blog" class="card" data-aos="fade-up">
+    <section id="blog" class="card" data-aos="fade-left">
       <h2>Latest Updates</h2>
-      <p class="update-placeholder">(Blog space coming soon! Exciting news and AI tips will appear here.)</p>
+      <p style="color:#7dbbbd;font-style:italic;">(Premium blog and tips coming soon!)</p>
     </section>
 
   </div>
 
-  <!-- Contact Section Card -->
-  <section id="contact" class="contact-section card" style="max-width:600px; margin:40px auto 20px auto;" data-aos="fade-up">
-      <h2>Contact Us</h2>
-      <p>
-        Want to collaborate or leave feedback?<br>
-        Email: <a href="mailto:hello@perplexity.ai" style="color:#0abdc6;font-weight:500;">hello@perplexity.ai</a>
-      </p>
+  <!-- Contact Card -->
+  <section id="contact" class="contact-section card" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p>
+      Ready to partner or want to know more? <br>
+      <a href="mailto:hello@perplexity.ai">hello@perplexity.ai</a>
+    </p>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="social-icons">
-        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter" /></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn" /></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub" /></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter" /></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn" /></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub" /></a>
       </div>
-      <p style="color:#c0e4e7;">&copy; 2025 Perplexity AI. Built for your curiosity.</p>
+      <div>
+        <span style="color:#ffe146;font-weight:600;">Perplexity AI</span>
+        &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp;
+        <span style="font-size:.98rem;">&copy; 2025</span>
+      </div>
     </div>
   </footer>
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 </body>
