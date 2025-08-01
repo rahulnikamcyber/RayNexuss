@@ -1,31 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact - Raynexuss</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - RayNexuss</title>
+  <meta name="description" content="Get in touch with RayNexuss for AI collaborations, support or inquiries." />
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%);
+      color: #16192c;
+      margin: 0;
+    }
+    a { text-decoration: none; color: inherit; }
+    .navbar {
+      background: rgba(16, 2, 77, 0.92);
+      box-shadow: 0 4px 20px rgba(16, 2, 77, 0.10);
+      padding: 13px 2%;
+      position: sticky;
+      top: 0; z-index: 10;
+    }
+    .navbar .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #53fff7;
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;
+    }
+    .nav-links li a {
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      background: #53fff7;
+      color: #10024d;
+      box-shadow: 0 2px 6px rgba(83, 255, 247, 0.12);
+    }
+    main {
+      max-width: 700px;
+      margin: 40px auto 60px auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(16,2,77,0.08);
+      padding: 40px 42px;
+      backdrop-filter: blur(8px);
+      border: 1.3px solid rgba(83,255,247,0.18);
+      user-select: text;
+    }
+    h1, h2 {
+      color: #0abdc6;
+      font-weight: 700;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+      color: #19224d;
+      user-select: text;
+    }
+    a.email-link {
+      color: #0abdc6;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    a.email-link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: #10024d;
+      color: #cef6f9;
+      padding: 1.5rem 0 0.7rem 0;
+      text-align: center;
+      margin-top: 37px;
+      user-select: none;
+    }
+    .social-icons {
+      margin: 20px 0 12px 0;
+    }
+    .social-icons a {
+      margin: 0 12px;
+      display: inline-block;
+      transition: transform 0.19s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.22);
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(90%) saturate(140%);
+    }
+    @media (max-width: 600px) {
+      main {
+        margin: 30px 15px 40px 15px;
+        padding: 30px 25px;
+      }
+      h1, h2 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">Raynexuss</h1>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <h1 class="logo"><a href="https://github.com/rahulnikamcyber/RayNexuss" target="_blank" rel="noopener">RayNexuss</a></h1>
+    <ul class="nav-links">
+      <li><a href="https://rahulnikamcyber.github.io/RayNexuss/index.html">Home</a></li>
+      <li><a href="https://rahulnikamcyber.github.io/RayNexuss/#contact" class="active">Contact</a></li>
+      <li><a href="https://rahulnikamcyber.github.io/RayNexuss/#blog">Service</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main role="main" data-aos="fade-up">
+  <h1>Contact Us</h1>
+  <p>We’re excited to hear from you! Whether you want to collaborate, give feedback, or ask a question, reach out anytime.</p>
+  <p>Email us at: <a href="mailto:hello@raynexuss.com" class="email-link">hello@raynexuss.com</a></p>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="social-icons" aria-label="Social media links">
+      <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter icon" /></a>
+      <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn icon" /></a>
+      <a href="#" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub icon" /></a>
     </div>
-  </header>
+    <div style="margin-top: 6px; font-weight: 600; color: #ffe146;">
+      RayNexuss &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp; &copy; 2025
+    </div>
+  </div>
+</footer>
 
-  <main>
-    <h1>Contact Us</h1>
-    <form>
-      <label>Name</label><br>
-      <input type="text" required><br>
-      <label>Email</label><br>
-      <input type="email" required><br>
-      <label>Message</label><br>
-      <textarea required></textarea><br>
-      <button type="submit">Send</button>
-    </form>
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2025 Raynexuss. All rights reserved.</p>
-  </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 </body>
 </html>
