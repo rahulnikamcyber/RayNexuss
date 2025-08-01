@@ -3,31 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Perplexity AI – The Premium AI Answer Engine</title>
-  <meta name="description" content="Experience the next level of AI-powered answers. Instant, reliable, premium knowledge with Perplexity AI." />
+  <title>RayNexuss – The Premium AI Answer Engine</title>
+  <meta name="description" content="Experience the next level of AI-powered answers. Instant, reliable, premium knowledge with RayNexuss." />
   <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
-    /* Reset and base */
     body {
       font-family: 'Montserrat', Arial, sans-serif;
       background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%);
       color: #16192c;
       margin: 0;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Navbar */
+    a { text-decoration: none; color: inherit; }
     .navbar {
       background: rgba(16, 2, 77, 0.92);
       box-shadow: 0 4px 20px rgba(16, 2, 77, 0.10);
       padding: 13px 2%;
       position: sticky;
-      top: 0;
-      z-index: 10;
+      top: 0; z-index: 10;
     }
     .navbar .container {
       max-width: 1200px;
@@ -43,11 +37,7 @@
       letter-spacing: 1px;
     }
     .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
+      list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;
     }
     .nav-links li a {
       color: #fff;
@@ -63,19 +53,13 @@
       color: #10024d;
       box-shadow: 0 2px 6px rgba(83, 255, 247, 0.12);
     }
-
-    /* Hero Section */
     .hero-section {
       min-height: 60vh;
       background: linear-gradient(120deg, #10024d 60%, #53fff7 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; color: #fff;
+      position: relative; overflow: hidden;
       padding: 70px 15px 60px 15px;
     }
     .hero-section::before {
@@ -96,22 +80,14 @@
       font-weight: 700;
       margin-bottom: 14px;
       background: linear-gradient(92deg, #53fff7, #ffe146);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
+      background-clip: text; -webkit-background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
       animation: pop-in 1.2s ease;
       user-select: none;
     }
     @keyframes pop-in {
-      0% {
-        transform: scale(0.95);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
     .hero-text p {
       font-size: 1.4rem;
@@ -139,8 +115,6 @@
       color: #0abdc6;
       transform: scale(1.05);
     }
-
-    /* Counters */
     .counters {
       display: flex;
       justify-content: center;
@@ -150,23 +124,9 @@
       font-weight: 700;
       user-select: none;
     }
-    .counter-item {
-      text-align: center;
-      color: #ffe146;
-    }
-    .counter-number {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #ffe146;
-    }
-    .counter-label {
-      font-size: 1rem;
-      color: #0abdc6;
-      margin-top: 4px;
-      font-weight: 600;
-    }
-
-    /* Feature Tiles */
+    .counter-item { text-align: center; color: #ffe146; }
+    .counter-number { font-size: 2.5rem; font-weight: 900;}
+    .counter-label { font-size: 1rem; color: #0abdc6; margin-top: 4px; font-weight: 600; }
     .feature-tiles {
       display: flex;
       flex-wrap: wrap;
@@ -188,7 +148,7 @@
       text-align: center;
       padding: 36px 14px 24px 14px;
       cursor: pointer;
-      transition: transform 0.21s ease, box-shadow 0.22s ease;
+      transition: transform 0.21s, box-shadow 0.22s;
       user-select: none;
     }
     .feature-tile:hover {
@@ -197,24 +157,10 @@
     }
     .feature-tile img {
       margin-bottom: 14px;
-      width: 50px;
-      height: 50px;
-      user-select: none;
+      width: 50px; height: 50px; user-select: none;
     }
-    .feature-tile .feature-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #ffe146;
-      margin-bottom: 6px;
-      user-select: none;
-    }
-    .feature-tile .feature-desc {
-      font-size: 0.93rem;
-      color: #b5f8fc;
-      user-select: none;
-    }
-
-    /* Main content cards */
+    .feature-tile .feature-title { font-weight: 700; font-size: 1.1rem; color: #ffe146; margin-bottom: 6px; }
+    .feature-tile .feature-desc { font-size: 0.93rem; color: #b5f8fc; }
     .main-content {
       max-width: 1200px;
       margin: 40px auto 40px auto;
@@ -222,8 +168,7 @@
       flex-wrap: wrap;
       gap: 36px;
       justify-content: center;
-      position: relative;
-      z-index: 2;
+      position: relative; z-index: 2;
       padding: 0 10px;
     }
     .card {
@@ -231,170 +176,57 @@
       border-radius: 20px;
       box-shadow: 0 12px 32px rgba(16, 2, 77, 0.08);
       padding: 38px 32px;
-      min-width: 340px;
-      max-width: 450px;
-      margin: 14px 6px;
+      min-width: 340px; max-width: 450px; margin: 14px 6px;
       backdrop-filter: blur(8px);
       border: 1.3px solid rgba(83, 255, 247, 0.18);
-      transition: box-shadow 0.25s ease, transform 0.2s ease;
+      transition: box-shadow 0.25s, transform 0.2s;
       user-select: none;
     }
-    .card:hover {
-      box-shadow: 0 20px 52px rgba(16, 2, 77, 0.15);
-      transform: translateY(-8px) scale(1.02);
-    }
-    .card h2 {
-      color: #0abdc6;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .card p {
-      line-height: 1.5;
-      color: #19224d;
-    }
-    .card ul {
-      margin-top: 18px;
-      margin-left: 32px;
-      color: #16192c;
-      font-weight: 600;
-    }
-    .card ul li {
-      margin-bottom: 8px;
-    }
-
-    /* Testimonials */
-    .testimonial-section {
-      text-align: center;
-      margin-top: 12px;
-      margin-bottom: 22px;
-    }
+    .card:hover { box-shadow: 0 20px 52px rgba(16, 2, 77, 0.15); transform: translateY(-8px) scale(1.02);}
+    .card h2 { color: #0abdc6; font-weight: 700; margin-bottom: 14px;}
+    .card p { line-height: 1.5; color: #19224d;}
+    .card ul { margin-top: 18px; margin-left: 32px; color: #16192c; font-weight: 600;}
+    .card ul li { margin-bottom: 8px; }
+    .testimonial-section { text-align: center; margin-top: 12px; margin-bottom: 22px;}
     .testimonial {
-      font-style: italic;
-      background: rgba(83, 255, 247, 0.09);
-      border-radius: 14px;
-      max-width: 500px;
-      margin: 14px auto 8px auto;
-      padding: 24px 28px;
-      color: #141e36;
-      box-shadow: 0 4px 14px rgba(16, 2, 77, 0.07);
-      user-select: none;
+      font-style: italic; background: rgba(83, 255, 247, 0.09);
+      border-radius: 14px; max-width: 500px; margin: 14px auto 8px auto; padding: 24px 28px;
+      color: #141e36; box-shadow: 0 4px 14px rgba(16, 2, 77, 0.07); user-select: none;
     }
-    .testimonial strong {
-      color: #0abdc6;
-    }
-
-    /* Contact Section */
+    .testimonial strong { color: #0abdc6; }
     .contact-section {
-      background: #fffdfaee;
-      padding: 38px 0;
-      margin: 40px auto 40px auto;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 3px 17px rgba(16, 2, 77, 0.08);
-      max-width: 600px;
-      user-select: none;
+      background: #fffdfaee; padding: 38px 0; margin: 40px auto 40px auto; border-radius: 18px;
+      text-align: center; box-shadow: 0 3px 17px rgba(16, 2, 77, 0.08); max-width: 600px; user-select: none;
     }
-    .contact-section a {
-      color: #0abdc6;
-      font-weight: 600;
-      text-decoration: none;
-      transition: text-decoration 0.3s;
-    }
-    .contact-section a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      background: #10024d;
-      color: #cef6f9;
-      padding: 1.5rem 0 0.7rem 0;
-      text-align: center;
-      margin-top: 37px;
-      user-select: none;
-    }
-    .social-icons {
-      margin: 20px 0 12px 0;
-    }
-    .social-icons a {
-      margin: 0 12px;
-      display: inline-block;
-      transition: transform 0.19s ease;
-    }
-    .social-icons a:hover {
-      transform: scale(1.22);
-    }
-    .social-icons img {
-      width: 32px;
-      height: 32px;
-      filter: brightness(90%) saturate(140%);
-    }
-
-    /* Floating Chat Button */
+    .contact-section a { color: #0abdc6; font-weight: 600; }
+    .contact-section a:hover { text-decoration: underline; }
+    footer { background: #10024d; color: #cef6f9; padding: 1.5rem 0 0.7rem 0; text-align: center; margin-top: 37px; }
+    .social-icons { margin: 20px 0 12px 0; }
+    .social-icons a { margin: 0 12px; display: inline-block; transition: transform 0.19s; }
+    .social-icons a:hover { transform: scale(1.22);}
+    .social-icons img { width: 32px; height: 32px; filter: brightness(90%) saturate(140%);}
     .chat-button {
-      position: fixed;
-      bottom: 94px;
-      right: 24px;
-      background: #0abdc6;
-      color: #fff;
-      padding: 13px 20px;
-      border-radius: 26px;
-      font-weight: 600;
-      box-shadow: 0 2px 10px #0abdc637;
-      text-decoration: none;
-      z-index: 100;
-      user-select: none;
+      position: fixed; bottom: 94px; right: 24px;
+      background: #0abdc6; color: #fff;
+      padding: 13px 20px; border-radius: 26px; font-weight: 600;
+      box-shadow: 0 2px 10px #0abdc637; text-decoration: none; z-index: 100; user-select: none;
       transition: background 0.3s;
     }
-    .chat-button:hover {
-      background: #38d1e1;
-    }
-    
-    /* Scroll to top button */
+    .chat-button:hover { background: #38d1e1; }
     #scrollTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 38px;
-      right: 24px;
-      z-index: 99;
-      padding: 14px 18px;
-      background: linear-gradient(92deg, #53fff7, #ffe146);
-      color: #10024d;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 100px;
-      box-shadow: 0 2px 16px #0abdc667;
-      cursor: pointer;
-      transition: background 0.17s, box-shadow 0.16s;
-      user-select: none;
+      display: none; position: fixed; bottom: 38px; right: 24px; z-index: 99;
+      padding: 14px 18px; background: linear-gradient(92deg, #53fff7, #ffe146);
+      color: #10024d; font-size: 1.2rem; border: none; border-radius: 100px;
+      box-shadow: 0 2px 16px #0abdc667; cursor: pointer; transition: background 0.17s, box-shadow 0.16s; user-select: none;
     }
-    #scrollTopBtn:hover {
-      background: #fff;
-      color: #0abdc6;
-    }
-
-    /* Responsive */
+    #scrollTopBtn:hover { background: #fff; color: #0abdc6;}
     @media (max-width: 900px) {
-      .main-content {
-        flex-direction: column;
-        gap: 26px;
-      }
-      .feature-tiles {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero-title {
-        font-size: 2.3rem;
-      }
-      .hero-text p {
-        font-size: 1.2rem;
-      }
-      .counter-number {
-        font-size: 2rem;
-      }
-      .counter-label {
-        font-size: 0.9rem;
-      }
+      .main-content { flex-direction: column; gap: 26px; }
+      .feature-tiles { flex-direction: column; align-items: center;}
+      .hero-title { font-size: 2.3rem; }
+      .hero-text p { font-size: 1.2rem; }
+      .counter-number { font-size: 2rem; }
+      .counter-label { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -403,12 +235,11 @@
   <!-- Navbar -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
-      <h1 class="logo">Perplexity AI</h1>
+      <h1 class="logo"><a href="https://github.com/rahulnikamcyber/RayNexuss" target="_blank" rel="noopener">RayNexuss</a></h1>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#about">What is Perplexity?</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#blog">Updates</a></li>
+        <li><a href="https://rahulnikamcyber.github.io/RayNexuss/index.html" class="active">Home</a></li>
+        <li><a href="https://rahulnikamcyber.github.io/RayNexuss/#contact">Contact</a></li>
+        <li><a href="https://rahulnikamcyber.github.io/RayNexuss/#blog">Service</a></li>
       </ul>
     </div>
   </nav>
@@ -420,8 +251,8 @@
         Experience Premium AI Answers
       </div>
       <p>
-        The world’s fastest way to get precise information and knowledge—powered by Perplexity AI.<br />
-        <span style="font-size: 1.1rem; color: #ffe146;" aria-label="Clean design. Pro performance. Always reliable.">Clean design. Pro performance. Always reliable.</span>
+        The world’s fastest way to get precise information and knowledge—powered by RayNexuss.<br />
+        <span style="font-size: 1.1rem; color: #ffe146;">Clean design. Pro performance. Always reliable.</span>
       </p>
 
       <!-- Animated Counters -->
@@ -436,26 +267,24 @@
         </div>
       </div>
 
-      <a href="#about"><button class="cta-btn" aria-label="Discover Perplexity">Discover Perplexity</button></a>
+      <a href="#about"><button class="cta-btn" aria-label="Discover RayNexuss">Discover RayNexuss</button></a>
     </div>
   </header>
 
   <!-- Feature Tiles -->
-  <section class="feature-tiles" aria-label="Key features of Perplexity AI">
+  <section class="feature-tiles" aria-label="Key features of RayNexuss">
     <div class="feature-tile" tabindex="0"
       aria-describedby="feat1-desc" role="region" aria-label="Instant Answers">
       <img src="https://img.icons8.com/fluency/48/lightning-bolt.png" alt="" aria-hidden="true" />
       <div class="feature-title">Instant Answers</div>
       <div id="feat1-desc" class="feature-desc">Get reliable info right away</div>
     </div>
-
     <div class="feature-tile" tabindex="0"
       aria-describedby="feat2-desc" role="region" aria-label="Trusted Sources">
       <img src="https://img.icons8.com/fluency/48/checked-checkbox.png" alt="" aria-hidden="true" />
       <div class="feature-title">Trusted Sources</div>
       <div id="feat2-desc" class="feature-desc">Answers you can verify</div>
     </div>
-
     <div class="feature-tile" tabindex="0"
       aria-describedby="feat3-desc" role="region" aria-label="Super Fast">
       <img src="https://img.icons8.com/fluency/48/rocket.png" alt="" aria-hidden="true" />
@@ -467,9 +296,9 @@
   <!-- Main Content Cards -->
   <main class="main-content" role="main">
     <section id="about" class="card" data-aos="fade-right" aria-labelledby="about-title">
-      <h2 id="about-title">What is Perplexity AI?</h2>
+      <h2 id="about-title">What is RayNexuss?</h2>
       <p>
-        Perplexity AI is your always-on, AI-powered guide—delivering instant, thoroughly sourced answers, summaries, and insights.
+        RayNexuss is your always-on, AI-powered guide—delivering instant, thoroughly sourced answers, summaries, and insights.
       </p>
       <ul>
         <li>⚡ <strong>Real-time answers on ANY topic</strong></li>
@@ -480,15 +309,15 @@
     </section>
 
     <section class="card" data-aos="fade-up" aria-labelledby="testimonial-title">
-      <h2 id="testimonial-title">Why Choose Perplexity?</h2>
+      <h2 id="testimonial-title">Why Choose RayNexuss?</h2>
       <div class="testimonial-section">
         <div class="testimonial" tabindex="0">
           “<strong>It’s like a premium search, but faster and more reliable—my secret research tool.</strong>”<br />
-          <span style="color:#888; font-size:0.99rem;" aria-label="A satisfied user">– A satisfied user</span>
+          <span style="color:#888; font-size:0.99rem;">– A satisfied user</span>
         </div>
         <div class="testimonial" tabindex="0" style="margin-top:12px;">
           “The interface is SO clean and professional. Feels like a high-end app!”<br />
-          <span style="color:#888; font-size:0.99rem;" aria-label="Tech reviewer">– Tech reviewer</span>
+          <span style="color:#888; font-size:0.99rem;">– Tech reviewer</span>
         </div>
       </div>
     </section>
@@ -506,7 +335,7 @@
     <h2 id="contact-title">Contact Us</h2>
     <p>
       Ready to partner or want to know more?<br />
-      <a href="mailto:hello@perplexity.ai">hello@perplexity.ai</a>
+      <a href="mailto:hello@raynexuss.com">hello@raynexuss.com</a>
     </p>
   </section>
 
@@ -514,18 +343,18 @@
   <footer role="contentinfo">
     <div class="container">
       <div class="social-icons" aria-label="Social media links">
-        <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter icon" /></a>
-        <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn icon" /></a>
-        <a href="#" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub icon" /></a>
+        <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter icon"/></a>
+        <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn icon"/></a>
+        <a href="#" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub icon"/></a>
       </div>
       <div style="margin-top: 6px; font-weight: 600; color: #ffe146;">
-        Perplexity AI &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp; &copy; 2025
+        RayNexuss &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp; &copy; 2025
       </div>
     </div>
   </footer>
 
   <!-- Floating Chat / Ask Button -->
-  <a href="mailto:hello@perplexity.ai" class="chat-button" aria-label="Open chat to ask questions">💬 Chat/Ask</a>
+  <a href="mailto:hello@raynexuss.com" class="chat-button" aria-label="Open chat to ask questions">💬 Chat/Ask</a>
 
   <!-- Scroll to Top Button -->
   <button id="scrollTopBtn" aria-label="Scroll to top">&#8679;</button>
