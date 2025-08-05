@@ -1,129 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - RayNexuss</title>
-  <meta name="description" content="Explore the services offered by RayNexuss for AI-powered answers and insights." />
-  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%);
-      color: #16192c;
-      margin: 0;
-    }
-    a { text-decoration: none; color: inherit; }
-    .navbar {
-      background: rgba(16, 2, 77, 0.92);
-      box-shadow: 0 4px 20px rgba(16, 2, 77, 0.10);
-      padding: 13px 2%;
-      position: sticky;
-      top: 0; z-index: 10;
-    }
-    .navbar .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      color: #53fff7;
-      font-weight: 700;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;
-    }
-    .nav-links li a {
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: 0.3s;
-      display: inline-block;
-    }
-    .nav-links li a.active,
-    .nav-links li a:hover {
-      background: #53fff7;
-      color: #10024d;
-      box-shadow: 0 2px 6px rgba(83, 255, 247, 0.12);
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto 60px auto;
-      background: rgba(255,255,255,0.95);
-      border-radius: 20px;
-      box-shadow: 0 12px 32px rgba(16,2,77,0.08);
-      padding: 40px 42px;
-      backdrop-filter: blur(8px);
-      border: 1.3px solid rgba(83,255,247,0.18);
-      user-select: text;
-    }
-    h1, h2 {
-      color: #0abdc6;
-      font-weight: 700;
-      margin-bottom: 16px;
-      user-select: none;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 8px;
-      color: #16192c;
-      font-weight: 600;
-    }
-    ul li {
-      background: #e0f7fa;
-      margin-bottom: 14px;
-      padding: 14px 18px;
-      border-radius: 12px;
-      box-shadow: inset 0 0 10px rgba(10, 189, 198, 0.2);
-      user-select: text;
-    }
-    footer {
-      background: #10024d;
-      color: #cef6f9;
-      padding: 1.5rem 0 0.7rem 0;
-      text-align: center;
-      margin-top: 37px;
-      user-select: none;
-    }
-    .social-icons {
-      margin: 20px 0 12px 0;
-    }
-    .social-icons a {
-      margin: 0 12px;
-      display: inline-block;
-      transition: transform 0.19s;
-    }
-    .social-icons a:hover {
-      transform: scale(1.22);
-    }
-    .social-icons img {
-      width: 32px;
-      height: 32px;
-      filter: brightness(90%) saturate(140%);
-    }
-    @media (max-width: 600px) {
-      main {
-        margin: 30px 15px 40px 15px;
-        padding: 30px 25px;
-      }
-      h1, h2 {
-        font-size: 1.7rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Services - RayNexuss</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<style>
+body { font-family: 'Montserrat', sans-serif; background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%); margin:0; color:#16192c; }
+a { text-decoration:none; color:inherit; }
+.navbar { background: rgba(16, 2, 77, 0.92); box-shadow:0 4px 20px rgba(16, 2, 77, 0.10); padding:13px 2%; }
+.navbar .container { max-width: 1200px; margin:auto; display:flex; justify-content: space-between; align-items:center; }
+.logo { color:#53fff7; font-size:2.2rem; font-weight:700; }
+.nav-links { list-style:none; display:flex; gap:30px; }
+.nav-links li a { padding:8px 20px; border-radius:6px; font-weight:600; transition:0.3s; }
+.nav-links li a:hover, .nav-links li a.active { background:#53fff7; color:#10024d; }
+main { max-width:900px; margin:40px auto; padding:40px; background:rgba(255,255,255,0.95); border-radius:20px; box-shadow:0 12px 32px rgba(16,2,77,0.08); }
+h1, h2 { color:#0abdc6; margin-bottom:16px; }
+ul { list-style:inside disc; margin-left:20px; }
+footer { background:#10024d; padding:1rem; text-align:center; color:#cef6f9; margin-top:37px; }
+.social-icons { margin:20px 0; }
+.social-icons a { margin:0 12px; display:inline-block; transition:transform 0.19s; }
+.social-icons a:hover { transform:scale(1.22); }
+</style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
+<nav class="navbar">
   <div class="container">
     <h1 class="logo"><a href="https://github.com/rahulnikamcyber/RayNexuss" target="_blank" rel="noopener">RayNexuss</a></h1>
     <ul class="nav-links">
@@ -134,28 +38,23 @@
   </div>
 </nav>
 
-<main role="main" data-aos="fade-up">
-  <h1>Our Services</h1>
-  <p>At RayNexuss, we provide an array of AI-driven services designed to meet your information needs:</p>
-  <ul>
-    <li><strong>Instant AI-Powered Answers:</strong> Reliable and lightning-fast responses to any question.</li>
-    <li><strong>Trusted Data Sourcing:</strong> We ensure answers come from verified and credible sources.</li>
-    <li><strong>Custom AI Solutions:</strong> Tailored insights and AI tools for businesses and educators.</li>
-    <li><strong>Real-Time Updates:</strong> Regular expansions and improvements to keep you ahead.</li>
-  </ul>
+<main data-aos="fade-up">
+<h1>Our Services</h1>
+<ul>
+<li>AI Answer Generation</li>
+<li>Data Sourcing & Verification</li>
+<li>Custom AI Solutions for Business</li>
+<li>Real-time Updates & Support</li>
+</ul>
 </main>
 
-<footer role="contentinfo">
-  <div class="container">
-    <div class="social-icons" aria-label="Social media links">
-      <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter icon" /></a>
-      <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn icon" /></a>
-      <a href="#" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub icon" /></a>
-    </div>
-    <div style="margin-top: 6px; font-weight: 600; color: #ffe146;">
-      RayNexuss &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp; &copy; 2025
-    </div>
-  </div>
+<footer>
+<div class="social-icons">
+<a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter"/></a>
+<a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn"/></a>
+<a href="#"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub"/></a>
+</div>
+<p>&copy; 2025 RayNexuss. All rights reserved.</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
