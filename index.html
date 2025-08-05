@@ -1,396 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RayNexuss – The Premium AI Answer Engine</title>
-  <meta name="description" content="Experience the next level of AI-powered answers. Instant, reliable, premium knowledge with RayNexuss." />
-  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/artificial-intelligence.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(110deg,#f6f8fc 60%,#e5f4fd 100%);
-      color: #16192c;
-      margin: 0;
-    }
-    a { text-decoration: none; color: inherit; }
-    .navbar {
-      background: rgba(16, 2, 77, 0.92);
-      box-shadow: 0 4px 20px rgba(16, 2, 77, 0.10);
-      padding: 13px 2%;
-      position: sticky;
-      top: 0; z-index: 10;
-    }
-    .navbar .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      color: #53fff7;
-      font-weight: 700;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;
-    }
-    .nav-links li a {
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: 0.3s;
-      display: inline-block;
-    }
-    .nav-links li a.active,
-    .nav-links li a:hover {
-      background: #53fff7;
-      color: #10024d;
-      box-shadow: 0 2px 6px rgba(83, 255, 247, 0.12);
-    }
-    .hero-section {
-      min-height: 60vh;
-      background: linear-gradient(120deg, #10024d 60%, #53fff7 100%);
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center; color: #fff;
-      position: relative; overflow: hidden;
-      padding: 70px 15px 60px 15px;
-    }
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('https://img.freepik.com/free-vector/abstract-technology-background_23-2149170121.jpg') no-repeat center center/cover;
-      opacity: 0.08;
-      z-index: 0;
-    }
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-    }
-    .hero-title {
-      font-size: 3.3rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-      background: linear-gradient(92deg, #53fff7, #ffe146);
-      background-clip: text; -webkit-background-clip: text;
-      color: transparent; -webkit-text-fill-color: transparent;
-      animation: pop-in 1.2s ease;
-      user-select: none;
-    }
-    @keyframes pop-in {
-      0% { transform: scale(0.95); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .hero-text p {
-      font-size: 1.4rem;
-      margin-bottom: 32px;
-      color: #f0fdfa;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-    .cta-btn {
-      background: linear-gradient(90deg, #ffe146 60%, #0abdc6 100%);
-      color: #10024d;
-      font-size: 1.15rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 30px;
-      padding: 14px 34px;
-      transition: 0.22s;
-      box-shadow: 0 3px 18px rgba(16, 2, 77, 0.13);
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      user-select: none;
-    }
-    .cta-btn:hover {
-      background: #fff;
-      color: #0abdc6;
-      transform: scale(1.05);
-    }
-    .counters {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin: 38px 0 12px 0;
-      color: #ffe146;
-      font-weight: 700;
-      user-select: none;
-    }
-    .counter-item { text-align: center; color: #ffe146; }
-    .counter-number { font-size: 2.5rem; font-weight: 900;}
-    .counter-label { font-size: 1rem; color: #0abdc6; margin-top: 4px; font-weight: 600; }
-    .feature-tiles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 27px;
-      margin: 40px 10px 15px 10px;
-      max-width: 1140px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .feature-tile {
-      flex: 1 0 180px;
-      max-width: 210px;
-      min-width: 170px;
-      background: rgba(16, 2, 77, 0.86);
-      color: #53fff7;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(83, 255, 247, 0.13);
-      text-align: center;
-      padding: 36px 14px 24px 14px;
-      cursor: pointer;
-      transition: transform 0.21s, box-shadow 0.22s;
-      user-select: none;
-    }
-    .feature-tile:hover {
-      transform: scale(1.07);
-      box-shadow: 0 8px 36px #0abdc675;
-    }
-    .feature-tile img {
-      margin-bottom: 14px;
-      width: 50px; height: 50px; user-select: none;
-    }
-    .feature-tile .feature-title { font-weight: 700; font-size: 1.1rem; color: #ffe146; margin-bottom: 6px; }
-    .feature-tile .feature-desc { font-size: 0.93rem; color: #b5f8fc; }
-    .main-content {
-      max-width: 1200px;
-      margin: 40px auto 40px auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 36px;
-      justify-content: center;
-      position: relative; z-index: 2;
-      padding: 0 10px;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      box-shadow: 0 12px 32px rgba(16, 2, 77, 0.08);
-      padding: 38px 32px;
-      min-width: 340px; max-width: 450px; margin: 14px 6px;
-      backdrop-filter: blur(8px);
-      border: 1.3px solid rgba(83, 255, 247, 0.18);
-      transition: box-shadow 0.25s, transform 0.2s;
-      user-select: none;
-    }
-    .card:hover { box-shadow: 0 20px 52px rgba(16, 2, 77, 0.15); transform: translateY(-8px) scale(1.02);}
-    .card h2 { color: #0abdc6; font-weight: 700; margin-bottom: 14px;}
-    .card p { line-height: 1.5; color: #19224d;}
-    .card ul { margin-top: 18px; margin-left: 32px; color: #16192c; font-weight: 600;}
-    .card ul li { margin-bottom: 8px; }
-    .testimonial-section { text-align: center; margin-top: 12px; margin-bottom: 22px;}
-    .testimonial {
-      font-style: italic; background: rgba(83, 255, 247, 0.09);
-      border-radius: 14px; max-width: 500px; margin: 14px auto 8px auto; padding: 24px 28px;
-      color: #141e36; box-shadow: 0 4px 14px rgba(16, 2, 77, 0.07); user-select: none;
-    }
-    .testimonial strong { color: #0abdc6; }
-    .contact-section {
-      background: #fffdfaee; padding: 38px 0; margin: 40px auto 40px auto; border-radius: 18px;
-      text-align: center; box-shadow: 0 3px 17px rgba(16, 2, 77, 0.08); max-width: 600px; user-select: none;
-    }
-    .contact-section a { color: #0abdc6; font-weight: 600; }
-    .contact-section a:hover { text-decoration: underline; }
-    footer { background: #10024d; color: #cef6f9; padding: 1.5rem 0 0.7rem 0; text-align: center; margin-top: 37px; }
-    .social-icons { margin: 20px 0 12px 0; }
-    .social-icons a { margin: 0 12px; display: inline-block; transition: transform 0.19s; }
-    .social-icons a:hover { transform: scale(1.22);}
-    .social-icons img { width: 32px; height: 32px; filter: brightness(90%) saturate(140%);}
-    .chat-button {
-      position: fixed; bottom: 94px; right: 24px;
-      background: #0abdc6; color: #fff;
-      padding: 13px 20px; border-radius: 26px; font-weight: 600;
-      box-shadow: 0 2px 10px #0abdc637; text-decoration: none; z-index: 100; user-select: none;
-      transition: background 0.3s;
-    }
-    .chat-button:hover { background: #38d1e1; }
-    #scrollTopBtn {
-      display: none; position: fixed; bottom: 38px; right: 24px; z-index: 99;
-      padding: 14px 18px; background: linear-gradient(92deg, #53fff7, #ffe146);
-      color: #10024d; font-size: 1.2rem; border: none; border-radius: 100px;
-      box-shadow: 0 2px 16px #0abdc667; cursor: pointer; transition: background 0.17s, box-shadow 0.16s; user-select: none;
-    }
-    #scrollTopBtn:hover { background: #fff; color: #0abdc6;}
-    @media (max-width: 900px) {
-      .main-content { flex-direction: column; gap: 26px; }
-      .feature-tiles { flex-direction: column; align-items: center;}
-      .hero-title { font-size: 2.3rem; }
-      .hero-text p { font-size: 1.2rem; }
-      .counter-number { font-size: 2rem; }
-      .counter-label { font-size: 0.9rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernTech - Enhanced Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">MT</div>
+                <span class="logo-text">ModernTech</span>
+            </div>
 
-  <!-- Navbar -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <h1 class="logo"><a href="https://github.com/rahulnikamcyber/RayNexuss" target="_blank" rel="noopener">RayNexuss</a></h1>
-      <ul class="nav-links">
-        <li><a href="https://rahulnikamcyber.github.io/RayNexuss/index.html" class="active">Home</a></li>
-        <li><a href="https://rahulnikamcyber.github.io/RayNexuss/#contact">Contact</a></li>
-        <li><a href="https://rahulnikamcyber.github.io/RayNexuss/#blog">Service</a></li>
-      </ul>
-    </div>
-  </nav>
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link">Services <span class="dropdown-arrow">▾</span></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Web Development</a>
+                            <a href="#" class="dropdown-item">Mobile Apps</a>
+                            <a href="#" class="dropdown-item">UI/UX Design</a>
+                            <a href="#" class="dropdown-item">Digital Marketing</a>
+                            <a href="#" class="dropdown-item">Consulting</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#products" class="nav-link">Products <span class="dropdown-arrow">▾</span></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Software Solutions</a>
+                            <a href="#" class="dropdown-item">Templates</a>
+                            <a href="#" class="dropdown-item">Plugins</a>
+                            <a href="#" class="dropdown-item">Tools</a>
+                            <a href="#" class="dropdown-item">APIs</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resources" class="nav-link">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
 
-  <!-- Hero Section -->
-  <header class="hero-section" role="banner">
-    <div class="hero-text" data-aos="fade-up">
-      <div class="hero-title" aria-label="Experience Premium AI Answers">
-        Experience Premium AI Answers
-      </div>
-      <p>
-        The world’s fastest way to get precise information and knowledge—powered by RayNexuss.<br />
-        <span style="font-size: 1.1rem; color: #ffe146;">Clean design. Pro performance. Always reliable.</span>
-      </p>
+            <!-- Right Side Controls -->
+            <div class="nav-controls">
+                <!-- Search -->
+                <div class="search-container">
+                    <button class="search-btn" id="searchBtn">🔍</button>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                </div>
 
-      <!-- Animated Counters -->
-      <div class="counters" aria-live="polite" aria-atomic="true">
-        <div class="counter-item" aria-label="Answers Given: 1,234">
-          <div id="answersCount" class="counter-number">0</div>
-          <div class="counter-label">Answers Given</div>
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <select class="form-control language-select">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                        <option value="de">DE</option>
+                    </select>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+
+                <!-- Notifications -->
+                <button class="notification-btn" id="notificationBtn">🔔</button>
+
+                <!-- Shopping Cart -->
+                <button class="cart-btn" id="cartBtn">🛒</button>
+
+                <!-- User Profile -->
+                <button class="profile-btn" id="profileBtn">👤</button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            </div>
+        </nav>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb">
+                <a href="#">Home</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Dashboard</span>
+            </nav>
         </div>
-        <div class="counter-item" aria-label="Happy Users: 245">
-          <div id="usersCount" class="counter-number">0</div>
-          <div class="counter-label">Happy Users</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Build Amazing Digital Experiences</h1>
+                    <p class="hero-subtitle">We create modern, responsive websites and applications that drive results for your business.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn--primary btn--lg">Get Started</button>
+                        <button class="btn btn--outline btn--lg">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="feature-title">Modern Design</h3>
+                        <p class="feature-description">Clean, contemporary layouts with smooth animations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">Responsive</h3>
+                        <p class="feature-description">Perfect display on all devices and screen sizes</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Fast Performance</h3>
+                        <p class="feature-description">Optimized for speed and user experience</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3 class="feature-title">SEO Ready</h3>
+                        <p class="feature-description">Built with search engine optimization in mind</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Outstanding service and incredible attention to detail!"</p>
+                            <div class="testimonial-author">
+                                <strong>Sarah Johnson</strong>
+                                <span>Tech Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"The team delivered exactly what we needed, on time and on budget."</p>
+                            <div class="testimonial-author">
+                                <strong>Mike Chen</strong>
+                                <span>Digital Agency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prevTestimonial">‹</button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="testimonial-btn next" id="nextTestimonial">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="form-control newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ModernTech</h3>
+                    <p>Creating amazing digital experiences for businesses worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank">📘</a>
+                        <a href="#" target="_blank">🐦</a>
+                        <a href="#" target="_blank">📸</a>
+                        <a href="#" target="_blank">💼</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ModernTech. All rights reserved.</p>
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <a href="#about"><button class="cta-btn" aria-label="Discover RayNexuss">Discover RayNexuss</button></a>
-    </div>
-  </header>
-
-  <!-- Feature Tiles -->
-  <section class="feature-tiles" aria-label="Key features of RayNexuss">
-    <div class="feature-tile" tabindex="0"
-      aria-describedby="feat1-desc" role="region" aria-label="Instant Answers">
-      <img src="https://img.icons8.com/fluency/48/lightning-bolt.png" alt="" aria-hidden="true" />
-      <div class="feature-title">Instant Answers</div>
-      <div id="feat1-desc" class="feature-desc">Get reliable info right away</div>
-    </div>
-    <div class="feature-tile" tabindex="0"
-      aria-describedby="feat2-desc" role="region" aria-label="Trusted Sources">
-      <img src="https://img.icons8.com/fluency/48/checked-checkbox.png" alt="" aria-hidden="true" />
-      <div class="feature-title">Trusted Sources</div>
-      <div id="feat2-desc" class="feature-desc">Answers you can verify</div>
-    </div>
-    <div class="feature-tile" tabindex="0"
-      aria-describedby="feat3-desc" role="region" aria-label="Super Fast">
-      <img src="https://img.icons8.com/fluency/48/rocket.png" alt="" aria-hidden="true" />
-      <div class="feature-title">Super Fast</div>
-      <div id="feat3-desc" class="feature-desc">Blazingly responsive engine</div>
-    </div>
-  </section>
-
-  <!-- Main Content Cards -->
-  <main class="main-content" role="main">
-    <section id="about" class="card" data-aos="fade-right" aria-labelledby="about-title">
-      <h2 id="about-title">What is RayNexuss?</h2>
-      <p>
-        RayNexuss is your always-on, AI-powered guide—delivering instant, thoroughly sourced answers, summaries, and insights.
-      </p>
-      <ul>
-        <li>⚡ <strong>Real-time answers on ANY topic</strong></li>
-        <li>🔍 <strong>Verified sources</strong> so you trust every reply</li>
-        <li>🧠 <strong>Modern, intuitive experience</strong>—for everyone</li>
-        <li>🚀 <strong>Used by students, pros, and creators globally</strong></li>
-      </ul>
-    </section>
-
-    <section class="card" data-aos="fade-up" aria-labelledby="testimonial-title">
-      <h2 id="testimonial-title">Why Choose RayNexuss?</h2>
-      <div class="testimonial-section">
-        <div class="testimonial" tabindex="0">
-          “<strong>It’s like a premium search, but faster and more reliable—my secret research tool.</strong>”<br />
-          <span style="color:#888; font-size:0.99rem;">– A satisfied user</span>
+    <!-- Login Modal -->
+    <div class="modal hidden" id="loginModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <button class="modal-close" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="login-form">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
+                </form>
+            </div>
         </div>
-        <div class="testimonial" tabindex="0" style="margin-top:12px;">
-          “The interface is SO clean and professional. Feels like a high-end app!”<br />
-          <span style="color:#888; font-size:0.99rem;">– Tech reviewer</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="blog" class="card" data-aos="fade-left" aria-labelledby="updates-title">
-      <h2 id="updates-title">Latest Updates</h2>
-      <p style="color:#7dbbbd; font-style: italic;">
-        (Premium blog and tips coming soon!)
-      </p>
-    </section>
-  </main>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section card" data-aos="fade-up" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact Us</h2>
-    <p>
-      Ready to partner or want to know more?<br />
-      <a href="mailto:hello@raynexuss.com">hello@raynexuss.com</a>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="social-icons" aria-label="Social media links">
-        <a href="#" aria-label="Twitter"><img src="https://img.icons8.com/ios-filled/32/53fff7/twitter.png" alt="Twitter icon"/></a>
-        <a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/32/53fff7/linkedin.png" alt="LinkedIn icon"/></a>
-        <a href="#" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/32/53fff7/github.png" alt="GitHub icon"/></a>
-      </div>
-      <div style="margin-top: 6px; font-weight: 600; color: #ffe146;">
-        RayNexuss &nbsp;•&nbsp; The Premium Answer Engine &nbsp;•&nbsp; &copy; 2025
-      </div>
     </div>
-  </footer>
 
-  <!-- Floating Chat / Ask Button -->
-  <a href="mailto:hello@raynexuss.com" class="chat-button" aria-label="Open chat to ask questions">💬 Chat/Ask</a>
-
-  <!-- Scroll to Top Button -->
-  <button id="scrollTopBtn" aria-label="Scroll to top">&#8679;</button>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize animation library
-    AOS.init();
-
-    // Animated Number Counters
-    function animateValue(id, start, end, duration) {
-      var range = end - start;
-      var current = start;
-      var increment = end > start ? 1 : -1;
-      var stepTime = Math.abs(Math.floor(duration / range));
-      var obj = document.getElementById(id);
-      var timer = setInterval(function () {
-        current += increment;
-        obj.innerText = current.toLocaleString();
-        if (current === end) clearInterval(timer);
-      }, stepTime);
-    }
-    // Start counters with a slight delay
-    setTimeout(() => {
-      animateValue("answersCount", 0, 1234, 1200);
-      animateValue("usersCount", 0, 245, 1500);
-    }, 1000);
-
-    // Scroll-to-top button logic
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = () => {
-      scrollBtn.style.display = window.scrollY > 240 ? "block" : "none";
-    };
-    scrollBtn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-  </script>
+    <script src="app.js"></script>
 </body>
 </html>
