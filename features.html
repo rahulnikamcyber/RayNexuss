@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Perplexity AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            color: #00ff88;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #000;
+            border: 1px solid #00ff88;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%2300ff88" opacity="0.1"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #00ff88; }
+            to { text-shadow: 0 0 30px #00d4ff, 0 0 40px #00d4ff; }
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid #333;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.2);
+            border-color: #00ff88;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00ff88;
+        }
+        
+        .feature-card p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #aaa;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #000;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,255,136,0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Perplexity AI</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">What is Perplexity?</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#updates">Updates</a></li>
+                <li><a href="#features" class="active">Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Powerful Features</h1>
+            <p style="font-size: 1.2rem; color: #ccc;">Discover what makes Perplexity AI extraordinary</p>
+        </div>
+    </section>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>Advanced AI Processing</h3>
+            <p>State-of-the-art language models that understand context and nuance like never before.</p>
+            <ul class="feature-list">
+                <li>Natural language understanding</li>
+                <li>Context-aware responses</li>
+                <li>Multi-language support</li>
+                <li>Real-time processing</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Smart Search</h3>
+            <p>Revolutionary search capabilities that go beyond keywords to understand intent.</p>
+            <ul class="feature-list">
+                <li>Semantic search</li>
+                <li>Source verification</li>
+                <li>Instant results</li>
+                <li>Cross-reference validation</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Data Analytics</h3>
+            <p>Comprehensive analytics and insights to help you make informed decisions.</p>
+            <ul class="feature-list">
+                <li>Usage statistics</li>
+                <li>Performance metrics</li>
+                <li>Trend analysis</li>
+                <li>Custom reports</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Enterprise Security</h3>
+            <p>Bank-grade security measures to protect your data and maintain privacy.</p>
+            <ul class="feature-list">
+                <li>End-to-end encryption</li>
+                <li>Zero-log policy</li>
+                <li>GDPR compliant</li>
+                <li>SOC 2 certified</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Optimized infrastructure delivering responses in milliseconds, not seconds.</p>
+            <ul class="feature-list">
+                <li>Sub-second response time</li>
+                <li>Global CDN</li>
+                <li>Auto-scaling</li>
+                <li>99.9% uptime</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>API Integration</h3>
+            <p>Seamless integration with your existing tools and workflows.</p>
+            <ul class="feature-list">
+                <li>RESTful API</li>
+                <li>SDK support</li>
+                <li>Webhook notifications</li>
+                <li>Custom integrations</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2 style="margin-bottom: 2rem; font-size: 2.5rem;">Ready to Experience the Future?</h2>
+        <a href="#" class="cta-button">Start Free Trial</a>
+    </section>
+</body>
+</html>
