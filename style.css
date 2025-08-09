@@ -1541,7 +1541,4 @@ select.form-control {
 .social-links a[aria-label="Instagram"]:hover { 
   color: #E1306C; 
 }
-.social-links a[aria-label="Facebook"]:hover { color: #1877F2; }
-/* Brand accent on hover */
-.social-links a[aria-label="LinkedIn"]:hover { color: #0a66c2; } /* LinkedIn blue */
-.footer .social-links a { font-size: 22px; }
+
