@@ -1509,3 +1509,36 @@ select.form-control {
     font-size: var(--font-size-md);
   }
 }
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, color .2s ease, background .2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.social-links a i {
+  font-size: 18px;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+}
+
+/* Brand accents on hover */
+.social-links a[aria-label="WhatsApp"]:hover { color: #25D366; }
+.social-links a[aria-label="Instagram"]:hover { 
+  color: #E1306C; 
+}
+.social-links a[aria-label="Facebook"]:hover { color: #1877F2; }
