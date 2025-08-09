@@ -1542,3 +1542,5 @@ select.form-control {
   color: #E1306C; 
 }
 
+.social-links a[aria-label="Facebook"]:hover { color: #1877F2; }
+
