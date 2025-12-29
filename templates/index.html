@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center py-16">
+    <h1 class="text-5xl font-bold text-gray-900 mb-4">Lead-Vendor Automation Platform</h1>
+    <p class="text-xl text-gray-600 mb-12">Connect customers with service providers instantly</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <a href="/lead-form" class="bg-blue-600 text-white p-8 rounded-lg shadow-lg hover:bg-blue-700 transition">
+            <div class="text-4xl mb-4">📝</div>
+            <h3 class="text-xl font-bold mb-2">Submit a Lead</h3>
+            <p class="text-blue-100">Looking for a service? Submit your requirements</p>
+        </a>
+        
+        <a href="/vendor-register" class="bg-green-600 text-white p-8 rounded-lg shadow-lg hover:bg-green-700 transition">
+            <div class="text-4xl mb-4">🏢</div>
+            <h3 class="text-xl font-bold mb-2">Become a Vendor</h3>
+            <p class="text-green-100">Register to receive qualified leads</p>
+        </a>
+        
+        <a href="/login" class="bg-purple-600 text-white p-8 rounded-lg shadow-lg hover:bg-purple-700 transition">
+            <div class="text-4xl mb-4">🔐</div>
+            <h3 class="text-xl font-bold mb-2">Login</h3>
+            <p class="text-purple-100">Access your dashboard</p>
+        </a>
+    </div>
+    
+    <div class="mt-16 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="text-3xl font-bold text-blue-600 mb-4">1</div>
+                <h3 class="text-lg font-bold mb-2">Customer Submits Lead</h3>
+                <p class="text-gray-600">Customers fill out a simple form with their requirements</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="text-3xl font-bold text-green-600 mb-4">2</div>
+                <h3 class="text-lg font-bold mb-2">Automatic Routing</h3>
+                <p class="text-gray-600">Leads are matched to vendors by city and service type</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="text-3xl font-bold text-purple-600 mb-4">3</div>
+                <h3 class="text-lg font-bold mb-2">Instant Notification</h3>
+                <p class="text-gray-600">Vendors receive WhatsApp alerts with lead details</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
