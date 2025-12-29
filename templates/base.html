@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lead-Vendor Platform{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">Lead-Vendor Platform</a>
+            <div class="space-x-4">
+                {% block nav %}
+                <a href="/lead-form" class="hover:underline">Submit Lead</a>
+                <a href="/vendor-register" class="hover:underline">Vendor Registration</a>
+                <a href="/login" class="hover:underline">Login</a>
+                {% endblock %}
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container mx-auto mt-8 px-4">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer class="mt-16 bg-gray-800 text-white p-8 text-center">
+        <p>&copy; 2024 Lead-Vendor Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
