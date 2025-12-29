@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Lead Submitted{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8 text-center">
+    <div class="text-6xl mb-4">✅</div>
+    <h1 class="text-3xl font-bold mb-4 text-green-600">Lead Submitted Successfully!</h1>
+    <p class="text-gray-600 mb-6">Your lead has been submitted and matched with available vendors.</p>
+    
+    <div class="bg-gray-50 p-4 rounded-lg mb-6">
+        <p class="text-sm text-gray-600 mb-2">Your Reference ID:</p>
+        <p class="text-xl font-mono font-bold text-gray-800">{{ lead_id }}</p>
+    </div>
+    
+    <p class="text-gray-600 mb-8">Service providers will contact you shortly via phone or WhatsApp.</p>
+    
+    <a href="/" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition inline-block">
+        Back to Home
+    </a>
+</div>
+{% endblock %}
