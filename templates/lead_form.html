@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Lead{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">Submit Your Lead</h1>
+    
+    <form method="POST" action="/lead-form" class="space-y-4">
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+            <input type="text" name="full_name" required 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Mobile Number *</label>
+            <input type="tel" name="mobile" required pattern="[0-9]{10}"
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">City *</label>
+            <select name="city" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option value="">Select City</option>
+                <option value="MUMBAI">Mumbai</option>
+                <option value="DELHI">Delhi</option>
+                <option value="BANGALORE">Bangalore</option>
+                <option value="SURAT">Surat</option>
+                <option value="PUNE">Pune</option>
+                <option value="AHMEDABAD">Ahmedabad</option>
+            </select>
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Service Type *</label>
+            <select name="service_type" required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option value="">Select Service</option>
+                <option value="SOLAR">Solar Installation</option>
+                <option value="PLUMBING">Plumbing</option>
+                <option value="ELECTRICAL">Electrical</option>
+                <option value="CONSTRUCTION">Construction</option>
+                <option value="INTERIOR">Interior Design</option>
+            </select>
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Budget (₹) *</label>
+            <input type="number" name="budget" required min="1000" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+            <textarea name="notes" rows="4" 
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+        </div>
+        
+        <button type="submit" 
+                class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200">
+            Submit Lead
+        </button>
+    </form>
+</div>
+{% endblock %}
