@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block nav %}
+<a href="/admin/dashboard" class="hover:underline">Dashboard</a>
+<a href="/logout" class="hover:underline">Logout</a>
+{% endblock %}
+
+{% block content %}
+<div class="mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+</div>
+
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-600 mb-2">Leads Today</div>
+        <div class="text-3xl font-bold text-blue-600">{{ stats.total_leads_today }}</div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-600 mb-2">Leads This Week</div>
+        <div class="text-3xl font-bold text-green-600">{{ stats.total_leads_week }}</div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-600 mb-2">Leads This Month</div>
+        <div class="text-3xl font-bold text-purple-600">{{ stats.total_leads_month }}</div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-600 mb-2">Duplicate Leads</div>
+        <div class="text-3xl font-bold text-red-600">{{ stats.duplicate_leads }}</div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-600 mb-2">Active Vendors</div>
+        <div class="text-3xl font-bold text-indigo-600">{{ stats.active_vendors }}</div>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="text-sm text-gray-600 mb-2">Total Revenue</div>
+        <div class="text-3xl font-bold text-emerald-600">₹{{ "%.2f"|format(stats.total_revenue) }}</div>
+    </div>
+</div>
+
+<!-- Recent Leads -->
+<div class="bg-white rounded-lg shadow mb-8">
+    <div class="p-6 border-b">
+        <h2 class="text-xl font-bold">Recent Leads</h2>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">System Lead ID</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Customer</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">City</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Service</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Budget</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                {% for lead in leads %}
+                <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-sm font-mono">{{ lead.system_lead_id }}</td>
+                    <td class="px-6 py-4 text-sm">{{ lead.full_name }}</td>
+                    <td class="px-6 py-4 text-sm">{{ lead.city }}</td>
+                    <td class="px-6 py-4 text-sm">{{ lead.service_type }}</td>
+                    <td class="px-6 py-4 text-sm">₹{{ "%.2f"|format(lead.budget) }}</td>
+                    <td class="px-6 py-4 text-sm">
+                        {% if lead.is_duplicate %}
+                        <span class="px-2 py-1 text-xs rounded bg-red-100 text-red-800">Duplicate</span>
+                        {% else %}
+                        <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-800">Active</span>
+                        {% endif %}
+                    </td>
+                    <td class="px-6 py-4 text-sm">{{ lead.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Vendors List -->
+<div class="bg-white rounded-lg shadow">
+    <div class="p-6 border-b">
+        <h2 class="text-xl font-bold">Vendor Management</h2>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Vendor ID</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Company</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">City</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Service</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Credits</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                {% for vendor in vendors %}
+                <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-sm font-mono">{{ vendor.vendor_id }}</td>
+                    <td class="px-6 py-4 text-sm">{{ vendor.company_name }}</td>
+                    <td class="px-6 py-4 text-sm">{{ vendor.city }}</td>
+                    <td class="px-6 py-4 text-sm">{{ vendor.service_type }}</td>
+                    <td class="px-6 py-4 text-sm font-bold">{{ vendor.credits }}</td>
+                    <td class="px-6 py-4 text-sm">
+                        {% if vendor.is_active %}
+                        <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-800">Active</span>
+                        {% else %}
+                        <span class="px-2 py-1 text-xs rounded bg-gray-100 text-gray-800">Inactive</span>
+                        {% endif %}
+                    </td>
+                    <td class="px-6 py-4 text-sm">
+                        <button class="text-blue-600 hover:underline mr-2">Add Credits</button>
+                        <button class="text-green-600 hover:underline">WhatsApp</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
